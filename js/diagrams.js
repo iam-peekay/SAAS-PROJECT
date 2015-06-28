@@ -1,5 +1,7 @@
 var graph = new joint.dia.Graph;
 
+// Create paper contains the whole flow chart 
+
 var paper = new joint.dia.Paper({
     el: $('#myholder'),
     width: 600,
@@ -21,3 +23,5 @@ var link = new joint.dia.Link({
     source: { id: rect.id },
     target: { id: rect2.id }
 });
+
+graph.addCells([rect, rect2, link]);

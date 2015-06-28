@@ -222,14 +222,16 @@ header {
   margin: 0 0 10px;
 }
 
-.contact-info li.phone a{
-  background-image: url('../img/phone.png');
-  background-position: left;
+#contact-pic {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
 
-.contact-info li.mail a{
-  background-image: url('../img/mail.png');
+#contact-position {
+  display: inline-block;
 }
+
 
 /* media queries */
 

@@ -16,6 +16,18 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- JointJS JavaScript -->
+    <script src="js/joint.js"></script>
+
+
+    <!-- JointJS CSS -->
     <link href="css/joint.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -103,19 +115,11 @@
                     <hr class="small">
                     <p>This is where the diagram will go...</p>
                     <!-- Creating blank space for diagram -->
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <script> graph.addCells([rect, rect2, link]); </script>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+
+                    <div id="myholder">
+
+                    </div>
+
                     <!-- End of blank space for diagram -->
                     <!-- /.row (nested) -->
                     <a href="#" class="btn btn-dark">Click for SaaS Dictionary</a>
@@ -148,8 +152,8 @@
                     <h4><strong>Preethi Kasireddy</strong></h4>
                     <p>Nerd weirdo</p>
                     <ul class="contact-info">
-                        <li class="phone"> <a href="tel:201-895-9299">(201) 895-9299 </a></li>
-                        <li class="mail">  <a href="mailto:iam.preethi.k@gmail.com">iam.preethi.k@gmail.com</a></li>
+                        <li class="phone"> <img id="contact-pic" src='img/phone.png'/> <a href="tel:201-895-9299" id="contact-position"> (201) 895-9299 </a></li>
+                        <li class="mail">  <img id="contact-pic" src='img/mail.png'/> <a href="mailto:iam.preethi.k@gmail.com" id="contact-position"> iam.preethi.k@gmail.com</a></li>
                     </ul>
                     <br>
                     <ul class="list-inline">
@@ -167,16 +171,6 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- JointJS JavaScript -->
-    <script src="js/joint.js"></script>
-    <script src="js/diagrams.js"></script>
-    
     <!-- Custom Theme JavaScript -->
     <script>
     // Closes the sidebar menu
@@ -208,7 +202,7 @@
         });
     });
     </script>
-
+    <script src="js/diagrams.js"></script>
 </body>
 
 </html>
