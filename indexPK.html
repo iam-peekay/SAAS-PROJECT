@@ -12,13 +12,20 @@
     <title>SaaS Metrics Digram</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Tooltipster CSS -->
+    <link href="tooltipster-master/css/tooltipster.css" rel="stylesheet" type="text/css"/>
+
+    <!-- PK custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet"/>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -26,6 +33,8 @@
     <!-- JointJS JavaScript -->
     <script src="js/joint.js"></script>
 
+    <!-- Tooltipster JavaScript -->
+    <script type="text/javascript" src="tooltipster-master/js/jquery.tooltipster.min.js"></script>
 
     <!-- JointJS CSS -->
     <link href="css/joint.css" rel="stylesheet">
@@ -40,9 +49,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script>
+      $(document).ready(function() {
+          $('#test').tooltipster();
+          });
+      $(document).ready(function() {
+          $('#j_1').tooltipster();
+          });
+    </script>
 </head>
-
-
 
 <body>
 
@@ -112,17 +127,12 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>Diagram</h2>
-                    <hr class="small">
-                    <p>This is where the diagram will go...</p>
-                    <!-- Creating blank space for diagram -->
-
-                    <div id="myholder">
-
+                    <div id="test" title="This is a test message!"> TEST
                     </div>
+                    <div id="mydiagram">
 
                     <!-- End of blank space for diagram -->
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">Click for SaaS Dictionary</a>
+
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
