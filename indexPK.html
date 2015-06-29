@@ -51,10 +51,9 @@
 
     <script>
       $(document).ready(function() {
-          $('#test').tooltipster();
+          $('#j_1').tooltipster({
+            content: $('<span>Testing my first ever tooltip!</span>')
           });
-      $(document).ready(function() {
-          $('#j_1').tooltipster();
           });
     </script>
 </head>
@@ -127,8 +126,6 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>Diagram</h2>
-                    <div id="test" title="This is a test message!"> TEST
-                    </div>
                     <div id="mydiagram">
 
                     <!-- End of blank space for diagram -->

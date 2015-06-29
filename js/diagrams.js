@@ -27,19 +27,18 @@ var source11 = new joint.shapes.basic.Rect({
                       { offset: '100%', color: '#f05656'}
                     ]
                     }},
-                text: {
-                  text: 'SEO',
-                  fill: '#eeeeee',
-                  'font-family': 'Open Sans',
-                  'font-size': 16,
-                  'font-weight': 'bold',
-                  'font-variant': 'small-caps'
-                }}
+              text: {
+                text: 'SEO',
+                fill: '#eeeeee',
+                'font-family': 'Open Sans',
+                'font-size': 16,
+                'font-weight': 'bold',
+                'font-variant': 'small-caps'
+              }}
 });
 
-
 var source12 = source11.clone().translate(130, 0).attr('text/text', 'Social media');
-var source13 = source11.clone().translate(260, 0).attr('text/text', 'Offline\n (e.g. TV, radio)');
+var source13 = source11.clone().translate(260, 0).attr('text/text', 'Offline\n (e.g. tv, radio)');
 var source14 = source11.clone().translate(390, 0).attr('text/text', 'Other paid\n sources');
 
 /* ASK PRANEEt
