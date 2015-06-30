@@ -68,12 +68,12 @@ var link11 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
-      }
     }
+}
 });
 
 var link12 = new joint.dia.Link({
@@ -86,7 +86,7 @@ var link12 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
@@ -122,7 +122,7 @@ var link14 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
@@ -158,7 +158,7 @@ var link16 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
@@ -176,7 +176,7 @@ var link17 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
@@ -194,7 +194,7 @@ var link18 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
@@ -212,7 +212,7 @@ var link19 = new joint.dia.Link({
         stroke: '#384047',
         'stroke-width': 3
       },
-      'marker-target': {
+      '.marker-target': {
         stroke: '#F26D6D',
         fill: '#F26D6D',
         d: 'M 10 0 L 0 5 L 10 10 z'
