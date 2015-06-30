@@ -227,8 +227,8 @@ graph.addCells([source11, source12, source13, source14, source15, source16, sour
 // FIT CONTENT TO PAPER
 paper1.scaleContentToFit({
         padding: 30,
-        minScale: .2,
-        maxScale: 1.2
+        minScale: .5,
+        maxScale: 1
     });
 
 // FIXING MULTIPLE LINKS BETWEEN ELEMENTS
