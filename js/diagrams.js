@@ -13,22 +13,23 @@ var paper1 = new joint.dia.Paper({
 });
 
 paper1.setOrigin(-250,0);
-paper1.scaleContentToFit();
+
+// paper1.fitToContent([opt.gridWidth: 0], [opt.gridHeight: 0], [opt.padding: 10]);
 
 // ROW 1: Top of funnel sources
 var source11 = new joint.shapes.basic.Rect({
-    position: { x: 360, y: 20 },
+    position: { x: 360, y: 50 },
     size: { width: 120, height: 60 },
     attrs: { rect: {
                 fill: {
                     type: 'linearGradient',
                     stops: [
-                      { offset: '0%', color: '#F26D6D'},
-                      { offset: '100%', color: '#f05656'}
+                      { offset: '0%', color: '#e48842'},
+                      { offset: '100%', color: '#e48842'}
                     ]
                     }},
               text: {
-                text: 'SEO',
+                text: 'SEM',
                 fill: '#eeeeee',
                 'font-family': 'Open Sans',
                 'font-size': 16,
@@ -37,8 +38,10 @@ var source11 = new joint.shapes.basic.Rect({
               }}
 });
 
+//                       { offset: '0%', color: '#F26D6D'}
+//                      { offset: '100%', color: '#f05656'}
 var source12 = source11.clone().translate(130, 0).attr('text/text', 'Social media');
-var source13 = source11.clone().translate(260, 0).attr('text/text', 'Offline\n (e.g. tv, radio)');
+var source13 = source11.clone().translate(260, 0).attr('text/text', 'Offline\n advertising');
 var source14 = source11.clone().translate(390, 0).attr('text/text', 'Other paid\n sources');
 
 /* ASK PRANEEt

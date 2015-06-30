@@ -47,16 +47,16 @@ body {
 
 .btn-light {
     border-radius: 0;
-    color: #f26d6d;
-    background-color: rgba(242,109,109,0.9);
+    color: #E48842;
+    background-color: rgba(228,136,66,0.5);
     font-size: 1.2em;
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #f26d6d;
-    background-color: rgba(242,109,109,0.6);
+    color: #E48842;
+    background-color: rgba(228,136,66,0.8);
 }
 
 /* Custom Horizontal Rule */
@@ -105,7 +105,7 @@ hr.small {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #eee;
     background: rgba(255,255,255,0.2);
 }
 
@@ -182,8 +182,15 @@ header {
 }
 
 .diagram h2 {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
+
+#diagram-description {
+  font-size: 1.2em;
+  margin: -10px;
+  padding-bottom: 50px;
+}
+
 /* Call to Action */
 
 .call-to-action {

@@ -37,7 +37,8 @@
     <script type="text/javascript" src="tooltipster-master/js/jquery.tooltipster.min.js"></script>
 
     <!-- JointJS CSS -->
-    <link href="css/joint.css" rel="stylesheet">
+    <link href="css/joint.css" rel="stylesheet" />
+
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,600italic,700italic,400,300,600,700,800|Varela+Round' rel='stylesheet' type='text/css'>
@@ -52,7 +53,97 @@
     <script>
       $(document).ready(function() {
           $('#j_1').tooltipster({
-            content: $('<span>Testing my first ever tooltip!</span>')
+            content: $('<span>Search engine marketing (SEM) is a form of <i>paid</i> online marketing that promotes websites by increasing their visibility in search engine results pages (SERPs) through optimization and advertising</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow',
+          });
+          });
+
+      $(document).ready(function() {
+          $('#j_2').tooltipster({
+            content: $('<span>Paid marketing through social media sites (e.g. Facebook, Twitter, Pinterest, etc.)</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+      $(document).ready(function() {
+          $('#j_3').tooltipster({
+            content: $('<span>Any form of paid marketing done through offline channels (e.g. radio and print advertising, TV ads, telemarketing, etc.)</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+
+      $(document).ready(function() {
+          $('#j_5').tooltipster({
+            content: $('<span>Word-of-mouth (WOM) is an unpaid form of marketing where customers tell people how much they like a product or service, and in turn, those people are more likely to try that product or service. This can be triggered by having a great product that delivers value, exceptional customer service, etc. </span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+      $(document).ready(function() {
+          $('#j_6').tooltipster({
+            content: $('<span>Very similar to pure word of mouth, except this is typically influenced by a company. Referral marketing is done to increase word of mouth marketing by encouraging customers and contacts to talk as much as possible about a brand or product</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+
+      $(document).ready(function() {
+          $('#j_7').tooltipster({
+            content: $('<span>A stretegic marketing approach focused on creating and distributing valuable and relevant content to attract and retain a targetted audience (both customers and prospects) with the goal of driving some profitable customer action (e.g. sign-ups, trials, etc.)</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+
+      $(document).ready(function() {
+            $('#j_8').tooltipster({
+            content: $('<span>Search engine optimization (SEO) is a free form of marketing to increate visibility of a website in a search engine\'s unpaid results (i.e. "organic" or "earned" results) </span>' + '<img src="http://latex.codecogs.com/gif.latex?1+sin(x)" border="0"/>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+      $(document).ready(function() {
+            $('#j_10').tooltipster({
+            content: $('<span>Number of unique visitors who arrive at company’s website for the 1st time and proceed to browse. Even the same visitor visits the site more than once in that period, they are counted only once</span>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'top',
+            theme: 'tooltipster-default',
+            animation: 'grow'
+          });
+          });
+      $(document).ready(function() {
+            $('#ARR').tooltipster({
+            content: $('<span> Annual Recurring Revenue (ARR) is the predictable and recurring portion of revenue from subscriptions and maintenance.</span>' + '<p></p>' + '<center> <img src="http://latex.codecogs.com/svg.latex?ARR = MRR * 12" border="0" /> </center>'),
+            maxWidth: 300,
+            interactive: true,
+            position: 'right',
+            theme: 'tooltipster-default',
+            animation: 'grow',
+            contentAsHTML: true
           });
           });
     </script>
@@ -66,13 +157,13 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#"  onclick = $("#menu-close").click(); >Metrics Dictionary</a>
+                <a href="#"  onclick = $("#menu-close").click(); ><strong>Metrics Dictionary</strong></a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Metric 1</a>
+                <a href="#top" id="ARR", onclick = $("#menu-close").click(); >ARR</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Metric 2</a>
+                <a href="#top" onclick = $("#menu-close").click(); >Metric2</a>
             </li>
             <li>
                 <a href="#top" onclick = $("#menu-close").click(); >Metric 3</a>
@@ -125,7 +216,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Diagram</h2>
+                    <h2><strong>SaaS Flow Chart</strong></h2>
+                    <div id="diagram-description">
+                      <p>Hover on each box to learn more. <br>Click on the navigation bar on the right side to see a dictionary of SaaS metrics</br></p>
+                    <div>
                     <div id="mydiagram">
 
                     <!-- End of blank space for diagram -->
