@@ -14,7 +14,7 @@ var paper1 = new joint.dia.Paper({
 
 paper1.setOrigin(-250,0);
 
-// paper1.fitToContent([opt.gridWidth: 0], [opt.gridHeight: 0], [opt.padding: 10]);
+
 
 // ROW 1: Top of funnel sources
 var source11 = new joint.shapes.basic.Rect({
@@ -220,21 +220,29 @@ var link19 = new joint.dia.Link({
     }
 });
 
+
 // ADD CELLS TO GRAPH
 graph.addCells([source11, source12, source13, source14, source15, source16, source17, source18, source19, target1, link11, link12, link13, link14, link15, link16, link17, link18, link19]);
 
+// FIT CONTENT TO PAPER
+paper1.scaleContentToFit({
+        padding: 30,
+        minScale: .2,
+        maxScale: 1.2
+    });
+
 // FIXING MULTIPLE LINKS BETWEEN ELEMENTS
 
-function adjustVertices(graph, target1) {
+function adjustVertices(graph, cell) {
 
     // If the cell is a view, find its model.
-    target1 = target1.model || target1;
+    cell = cell.model || cell;
 
-    if (target1 instanceof joint.dia.Element) {
+    if (cell instanceof joint.dia.Element) {
 
-        _.chain(graph.getConnectedLinks(target1)).groupBy(function(link) {
+        _.chain(graph.getConnectedLinks(cell)).groupBy(function(link) {
             // the key of the group is the model id of the link's source or target, but not our cell id.
-            return _.omit([link.get('source').id, link.get('target').id], target1.id)[0];
+            return _.omit([link.get('source').id, link.get('target').id], cell.id)[0];
         }).each(function(group, key) {
             // If the member of the group has both source and target model adjust vertices.
             if (key !== 'undefined') adjustVertices(graph, _.first(group));
@@ -244,8 +252,8 @@ function adjustVertices(graph, target1) {
     }
 
     // The cell is a link. Let's find its source and target models.
-    var srcId = target1.get('source').id || target1.previous('source').id;
-    var trgId = target1.get('target').id || target1.previous('target').id;
+    var srcId = cell.get('source').id || cell.previous('source').id;
+    var trgId = cell.get('target').id || cell.previous('target').id;
 
     // If one of the ends is not a model, the link has no siblings.
     if (!srcId || !trgId) return;
@@ -266,7 +274,7 @@ function adjustVertices(graph, target1) {
 
     case 1:
         // There is only one link between the source and target. No vertices needed.
-        target1.unset('vertices');
+        cell.unset('vertices');
         break;
 
     default:
@@ -309,7 +317,8 @@ function adjustVertices(graph, target1) {
     }
 };
 
-var myAdjustVertices = _.partial(adjustVertices, graph);
+
+var myAdjustVertices = _.partial(adjustVertices, graph, target1);
 
 // adjust vertices when a cell is removed or its source/target was changed
 graph.on('add remove change:source change:target', myAdjustVertices);
