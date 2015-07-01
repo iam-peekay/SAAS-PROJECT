@@ -1,6 +1,18 @@
-// Problem: User when click on derived metric does nothing
-// Solution: When user clicks on derived metric, it should highlight the appropriate boxes that are related to the metric
+var metricsDefinitions = {j_14: 'test 1', j_15: 'test 2', j_16: 'test3'};
 
-$('#ARR').click( function() {
-  $('#j_1').css("background-color", "fff");
-});
+function hoverBox(arg1){
+
+  for (var i = 0; i < metricsDefinitions.length; i += 1) {
+      $(document).ready(function() {
+          $('#' + arg1[i]).tooltipster({
+          content: $('<span>' + arg1[i][0] + '</span>'),
+          maxWidth: 300,
+          interactive: true,
+          position: 'top',
+          theme: 'tooltipster-default',
+          animation: 'grow'
+        }) });
+
+}}
+
+hoverBox(metricsDefinitions);

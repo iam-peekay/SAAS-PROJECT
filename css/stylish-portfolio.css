@@ -10,6 +10,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+
 }
 
 body {
@@ -47,16 +48,16 @@ body {
 
 .btn-light {
     border-radius: 0;
-    color: #E48842;
-    background-color: rgba(228,136,66,0.5);
+    color: #ED6A5A;
+    background-color: rgba(237,106,90,0.5);
     font-size: 1.2em;
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #E48842;
-    background-color: rgba(228,136,66,0.8);
+    color: #ED6A5A;
+    background-color: rgba(237,106,90,0.8);
 }
 
 /* Custom Horizontal Rule */
@@ -125,7 +126,7 @@ hr.small {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: #eee;
     background: none;
 }
 
@@ -157,7 +158,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #729BA8;
+    background-color: #5CA4A9;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -186,7 +187,7 @@ header {
 }
 
 #diagram-description {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: -10px;
   padding-bottom: 50px;
 }
@@ -195,7 +196,7 @@ header {
 
 .call-to-action {
     padding: 50px 0;
-    background-color: #729BA8;
+    background-color: #5CA4A9;
     font-style: 'Montserrat';
 }
 
