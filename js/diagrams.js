@@ -30,7 +30,7 @@ var source11 = new joint.shapes.basic.Rect({
                     ]
                     }},
               text: {
-                text: 'SEM',
+                text: 'Other organic\n sources',
                 fill: '#384047',
                 'font-family': 'Open Sans',
                 'font-size': 16,
@@ -39,7 +39,7 @@ var source11 = new joint.shapes.basic.Rect({
               }}
 });
 
-
+/*
 var source12 = source11.clone().translate(130, 0).attr('text/text', 'Social media');
 var source13 = source11.clone().translate(260, 0).attr('text/text', 'Offline\n advertising');
 var source14 = source11.clone().translate(390, 0).attr('text/text', 'Other paid\n sources');
@@ -48,6 +48,16 @@ var source22 = source11.clone().translate(50, 140).attr('text/text', 'Referrals'
 var source23 = source11.clone().translate(180, 140).attr('text/text', 'Content\n marketing');
 var source24 = source11.clone().translate(310, 140).attr('text/text', 'SEO');
 var source25 = source11.clone().translate(440, 140).attr('text/text', 'Other organic\n sources');
+*/
+
+var source12 = source11.clone().translate(280, -20).attr('text/text', 'Social media');
+var source13 = source11.clone().translate(420, 40).attr('text/text', 'SEM');
+var source14 = source11.clone().translate(480, 120).attr('text/text', 'Offline\n advertising');
+var source21 = source11.clone().translate(-60, 80).attr('text/text', 'Word of mouth');
+var source22 = source11.clone().translate(-100, 160).attr('text/text', 'Referrals');
+var source23 = source11.clone().translate(140, -20).attr('text/text', 'Content\n marketing');
+var source24 = source11.clone().translate(-120, 240).attr('text/text', 'SEO');
+var source25 = source11.clone().translate(460, 220).attr('text/text', 'Other paid\n sources');
 
 // UNIQUE VISITORS BOX
 var target1 = source11.clone().translate(180, 280).attr({text: {text: 'Unique visitors'}, rect: {fill: '#ED6A5A'}});
@@ -135,8 +145,8 @@ source701.embed(source801).embed(source802);
 var link11 = new joint.dia.Link({
     source: { id: source11.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'none'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -153,8 +163,8 @@ var link11 = new joint.dia.Link({
 var link12 = new joint.dia.Link({
     source: { id: source12.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'none'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -171,8 +181,8 @@ var link12 = new joint.dia.Link({
 var link13 = new joint.dia.Link({
     source: { id: source13.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'none'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -189,8 +199,8 @@ var link13 = new joint.dia.Link({
 var link14 = new joint.dia.Link({
     source: { id: source14.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'none'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -207,8 +217,8 @@ var link14 = new joint.dia.Link({
 var link21 = new joint.dia.Link({
     source: { id: source21.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'none'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -225,8 +235,8 @@ var link21 = new joint.dia.Link({
 var link22 = new joint.dia.Link({
     source: { id: source22.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -243,8 +253,8 @@ var link22 = new joint.dia.Link({
 var link23 = new joint.dia.Link({
     source: { id: source23.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -261,8 +271,8 @@ var link23 = new joint.dia.Link({
 var link24 = new joint.dia.Link({
     source: { id: source24.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+  //  router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -279,8 +289,8 @@ var link24 = new joint.dia.Link({
 var link25 = new joint.dia.Link({
     source: { id: source25.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -294,11 +304,12 @@ var link25 = new joint.dia.Link({
     }
 });
 
+
 var link25 = new joint.dia.Link({
     source: { id: source25.id },
     target: { id: target1.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -315,8 +326,8 @@ var link25 = new joint.dia.Link({
 var link31 = new joint.dia.Link({
     source: { id: target1.id },
     target: { id: source31.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -333,8 +344,8 @@ var link31 = new joint.dia.Link({
 var link32 = new joint.dia.Link({
     source: { id: target1.id },
     target: { id: source32.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -351,8 +362,8 @@ var link32 = new joint.dia.Link({
 var link32a = new joint.dia.Link({
     source: { id: source31.id },
     target: { id: source32.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -369,8 +380,8 @@ var link32a = new joint.dia.Link({
 var link321 = new joint.dia.Link({
     source: { id: source321.id },
     target: { id: source32.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -387,8 +398,8 @@ var link321 = new joint.dia.Link({
 var link322 = new joint.dia.Link({
     source: { id: source322.id },
     target: { id: source32.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -405,8 +416,8 @@ var link322 = new joint.dia.Link({
 var link41 = new joint.dia.Link({
     source: { id: source32.id },
     target: { id: source41.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -423,8 +434,8 @@ var link41 = new joint.dia.Link({
 var link51 = new joint.dia.Link({
     source: { id: source41.id },
     target: { id: source51.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -441,8 +452,8 @@ var link51 = new joint.dia.Link({
 var link511 = new joint.dia.Link({
     source: { id: source51.id },
     target: { id: source511.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -459,8 +470,8 @@ var link511 = new joint.dia.Link({
 var link611 = new joint.dia.Link({
     source: { id: source51.id },
     target: { id: source611.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -477,8 +488,8 @@ var link611 = new joint.dia.Link({
 var link613a = new joint.dia.Link({
     source: { id: source613a.id },
     target: { id: source613.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -495,8 +506,8 @@ var link613a = new joint.dia.Link({
 var link613b = new joint.dia.Link({
     source: { id: source613b.id },
     target: { id: source613.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -513,8 +524,8 @@ var link613b = new joint.dia.Link({
 var link613c = new joint.dia.Link({
     source: { id: source613c.id },
     target: { id: source613.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -531,8 +542,8 @@ var link613c = new joint.dia.Link({
 var link71 = new joint.dia.Link({
     source: { id: source611.id },
     target: { id: source71.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -549,8 +560,8 @@ var link71 = new joint.dia.Link({
 var link612 = new joint.dia.Link({
     source: { id: source612.id },
     target: { id: source71.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -567,8 +578,8 @@ var link612 = new joint.dia.Link({
 var link613 = new joint.dia.Link({
     source: { id: source613.id },
     target: { id: source71.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -585,8 +596,8 @@ var link613 = new joint.dia.Link({
 var link81 = new joint.dia.Link({
     source: { id: source71.id },
     target: { id: source81.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -603,8 +614,8 @@ var link81 = new joint.dia.Link({
 var link811 = new joint.dia.Link({
     source: { id: source811.id },
     target: { id: source81.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -621,8 +632,8 @@ var link811 = new joint.dia.Link({
 var link812 = new joint.dia.Link({
     source: { id: source812.id },
     target: { id: source81.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -639,8 +650,8 @@ var link812 = new joint.dia.Link({
 var link91 = new joint.dia.Link({
     source: { id: source81.id },
     target: { id: source91.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -657,8 +668,8 @@ var link91 = new joint.dia.Link({
 var link911 = new joint.dia.Link({
     source: { id: source911.id },
     target: { id: source91.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+  //  router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -675,8 +686,8 @@ var link911 = new joint.dia.Link({
 var link912 = new joint.dia.Link({
     source: { id: source912.id },
     target: { id: source91.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+  //  router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -693,8 +704,8 @@ var link912 = new joint.dia.Link({
 var link101 = new joint.dia.Link({
     source: { id: source91.id },
     target: { id: source101.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+  //  router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -711,8 +722,8 @@ var link101 = new joint.dia.Link({
 var link1011 = new joint.dia.Link({
     source: { id: source1011.id },
     target: { id: source101.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -729,8 +740,8 @@ var link1011 = new joint.dia.Link({
 var link1012 = new joint.dia.Link({
     source: { id: source1012.id },
     target: { id: source101.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -747,8 +758,8 @@ var link1012 = new joint.dia.Link({
 var link201 = new joint.dia.Link({
     source: { id: source101.id },
     target: { id: source201.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -765,8 +776,8 @@ var link201 = new joint.dia.Link({
 var link202 = new joint.dia.Link({
     source: { id: source101.id },
     target: { id: source202.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -783,8 +794,8 @@ var link202 = new joint.dia.Link({
 var link203 = new joint.dia.Link({
     source: { id: source101.id },
     target: { id: source203.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -801,8 +812,8 @@ var link203 = new joint.dia.Link({
 var link301 = new joint.dia.Link({
     source: { id: source301.id },
     target: { id: source201.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -819,8 +830,8 @@ var link301 = new joint.dia.Link({
 var link302 = new joint.dia.Link({
     source: { id: source302.id },
     target: { id: source201.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -837,8 +848,8 @@ var link302 = new joint.dia.Link({
 var link401 = new joint.dia.Link({
     source: { id: source401.id },
     target: { id: source301.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -855,8 +866,8 @@ var link401 = new joint.dia.Link({
 var link501 = new joint.dia.Link({
     source: { id: source501.id },
     target: { id: source401.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -873,8 +884,8 @@ var link501 = new joint.dia.Link({
 var link502 = new joint.dia.Link({
     source: { id: source502.id },
     target: { id: source401.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -891,8 +902,8 @@ var link502 = new joint.dia.Link({
 var link601 = new joint.dia.Link({
     source: { id: source601.id },
     target: { id: source502.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -909,8 +920,8 @@ var link601 = new joint.dia.Link({
 var link602 = new joint.dia.Link({
     source: { id: source602.id },
     target: { id: source502.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -927,8 +938,8 @@ var link602 = new joint.dia.Link({
 var link603 = new joint.dia.Link({
     source: { id: source603.id },
     target: { id: source502.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -945,8 +956,8 @@ var link603 = new joint.dia.Link({
 var link701 = new joint.dia.Link({
     source: { id: source701.id },
     target: { id: source302.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -963,8 +974,8 @@ var link701 = new joint.dia.Link({
 var link702 = new joint.dia.Link({
     source: { id: source702.id },
     target: { id: source302.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -981,8 +992,8 @@ var link702 = new joint.dia.Link({
 var link703 = new joint.dia.Link({
     source: { id: source703.id },
     target: { id: source302.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -999,8 +1010,8 @@ var link703 = new joint.dia.Link({
 var link801 = new joint.dia.Link({
     source: { id: source801.id },
     target: { id: source701.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1017,8 +1028,8 @@ var link801 = new joint.dia.Link({
 var link802 = new joint.dia.Link({
     source: { id: source802.id },
     target: { id: source701.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1035,8 +1046,8 @@ var link802 = new joint.dia.Link({
 var link901 = new joint.dia.Link({
     source: { id: source901.id },
     target: { id: source702.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1053,8 +1064,8 @@ var link901 = new joint.dia.Link({
 var link902 = new joint.dia.Link({
     source: { id: source902.id },
     target: { id: source901.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1071,8 +1082,8 @@ var link902 = new joint.dia.Link({
 var link903 = new joint.dia.Link({
     source: { id: source903.id },
     target: { id: source901.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1089,8 +1100,8 @@ var link903 = new joint.dia.Link({
 var link1100 = new joint.dia.Link({
     source: { id: source1100.id },
     target: { id: source703.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1107,8 +1118,8 @@ var link1100 = new joint.dia.Link({
 var link1101 = new joint.dia.Link({
     source: { id: source1101.id },
     target: { id: source703.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1125,8 +1136,8 @@ var link1101 = new joint.dia.Link({
 var link1200 = new joint.dia.Link({
     source: { id: source1201.id },
     target: { id: source1101.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1143,8 +1154,8 @@ var link1200 = new joint.dia.Link({
 var link1201 = new joint.dia.Link({
     source: { id: source1200.id },
     target: { id: source1101.id },
-    router: { name: 'manhattan'},
-    connector: {name: 'rounded'},
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
     attrs: {
       '.connection': {
         stroke: '#384047',
@@ -1255,7 +1266,7 @@ function adjustVertices(graph, cell) {
 };
 
 
-var myAdjustVertices = _.partial(adjustVertices, graph, target1);
+var myAdjustVertices = _.partial(adjustVertices, graph);
 
 // adjust vertices when a cell is removed or its source/target was changed
 graph.on('add remove change:source change:target', myAdjustVertices);
