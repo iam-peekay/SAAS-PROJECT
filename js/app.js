@@ -1,4 +1,4 @@
-// INPUT & FUNCTION HOVERBOXES
+// INPUT & FUNCTION FOR MAIN METRICS HOVERBOXES
 
 var metricsDefinitions = [
   ['j_2', '<span><b>Social media marketing:</b>\n Paid marketing through social media sites (e.g. Facebook, Twitter, Pinterest, etc.)</span>' ],
@@ -33,11 +33,12 @@ function hoverBox(arg1){
       }});
       }
 
+// INPUT & FUNCTION FOR DERIVED METRICS HOVERBOXES
 
 var derivedMetricsDefinitions = [
-    ['ARR', '<span><b>Annual Recurring Revenue (ARR): </b> The predictable and recurring portion of revenue from subscriptions and maintenance</span>' + '<p></p>' + '<center> <img src="http://latex.codecogs.com/svg.latex?ARR = MRR * 12" border="0" /> </center>'],
-    ['ARPAnew', '<span><b>ARPA (new): </b> Average monthly recurring revenue per NEW paying account (customer)</span>' + '<p></p>' + '<center> <img src="http://latex.codecogs.com/svg.latex? ARPA = MRR from NEW customers / (Number of NEW Paying Accounts) " border="0" /> </center>'],
-    ['ARPAexisting', '<span><b>ARPA (existing): </b> Average monthly recurring revenue per EXISTING paying account (customer)</span>' + '<p></p>' + '<center> <p> ARPA = \\frac {MRR from existing customers} {Number of existing Paying Accounts}</p> </center>']
+    ['ARR', '<span><b>Annual Recurring Revenue (ARR): </b> The predictable and recurring portion of revenue from subscriptions and maintenance</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex?MRR * 12" border="0" /> </center>'],
+    ['ARPAnew', '<span><b>ARPA (new): </b> Average monthly recurring revenue per new paying account (customer)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac {MRR\\; from\\;  NEW\\; customers} {Number\\; of\\; new\\; paying\\; accounts}} " border="0" /> </center>'],
+    ['ARPAexisting', '<span><b>ARPA (existing): </b> Average monthly recurring revenue per existing paying account (customer)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac{MRR\\; from\\; existing\\; customers}{Number\\; of\\; existing\\; paying\\; accounts}} " border="0" /> </center>']
     ];
 
 function derivedHoverBox(arg2){
@@ -45,7 +46,7 @@ function derivedHoverBox(arg2){
           for (var i = 0; i < derivedMetricsDefinitions.length; i += 1) {
             $('#' + arg2[i][0] + '').tooltipster({
               content: $('<span>' + arg2[i][1] + '</span>'),
-              maxWidth: 300,
+              maxWidth: 400,
               interactive: true,
               position: 'left',
               theme: 'tooltipster-default',
@@ -57,6 +58,71 @@ function derivedHoverBox(arg2){
 
 hoverBox(metricsDefinitions);
 derivedHoverBox(derivedMetricsDefinitions);
+
+// FUNCTION FOR HIGHLIGHTING
+
+var counterArr = [0,0,0,0,0]; // # of 0's depends on the # of derived metrics
+var map={};
+map[0] = [source811];
+map[1] = [source611, source71];
+map[2] = [source613, source71];
+
+
+var colorMap={};
+colorMap[source11] = '#5CA4A9';
+colorMap[source12] = '#5CA4A9';
+colorMap[source13] = '#5CA4A9';
+colorMap[source21] = '#5CA4A9';
+colorMap[source22] = '#5CA4A9';
+
+
+colorMap[source611] = '#5CA4A9';
+colorMap[source613] = '#5CA4A9';
+colorMap[source71] = '#5CA4A9';
+colorMap[source811] = '#5CA4A9';
+
+
+function highLight(val)
+{
+    if(counterArr[val]%2==0)
+    {
+        listSrc = map[val];
+        var i=0;
+        for(i=0;i<listSrc.length;i++)
+        {
+            listSrc[i].removeAttr('rect/fill');
+            listSrc[i].attr('rect/fill',{
+                        type: 'linearGradient',
+                        stops: [
+                          { offset: '0%', color: '#F4F1BB'},
+                          { offset: '100%', color: '#F4F1BB'}
+                        ]
+                        });
+
+            listSrc[i].attr('rect/filter', { name: 'dropShadow', args: { dx: 2, dy: 2, blur: 3 } });
+        }
+    }
+    else
+    {
+        listSrc = map[val];
+        var i=0;
+        for(i=0;i<listSrc.length;i++)
+        {
+            listSrc[i].attr('rect/fill',{
+                    type: 'linearGradient',
+                    stops: [
+                      { offset: '0%', color: colorMap[listSrc[i]]},
+                      { offset: '100%', color: colorMap[listSrc[i]]}
+                    ]
+                    });
+            listSrc[i].removeAttr('rect/filter');
+        }
+    }
+    counterArr[val] += 1;
+}
+
+
+
 
 // INPUT & FUNCTION FOR HIDE AND SHOW FUNCTIONALITY
   // 2-D array of elements that need to hidden at start
