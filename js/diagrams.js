@@ -67,7 +67,7 @@ target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(so
 // MIDDLE OF FUNNEL BOXES
 var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
 var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL');
-var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Channel'}, rect: {fill:  '#5CA4A9'}});
+var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
 var source322 = source32.clone().translate(180, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
 var source41 = source32.clone().translate(0, 100).attr('text/text', 'Opportunities');
 
@@ -1277,10 +1277,17 @@ paper1.on('cell:pointerup', myAdjustVertices);
 
 // FUNCTION FOR HIGHLIGHTING
 
-var counterArr = [0,0,0,0,0];
+var counterArr = [0,0,0,0,0]; // # of 0's depends on the # of derived metrics
 var map={};
 map[0] = [source11, source12];
 map[1] = [source13, source21, source22];
+
+var colorMap={};
+colorMap[source11] = '#5CA4A9';
+colorMap[source12] = '#5CA4A9';
+colorMap[source13] = '#5CA4A9';
+colorMap[source21] = '#5CA4A9';
+colorMap[source22] = '#5CA4A9';
 
 function highLight(val)
 {
@@ -1311,8 +1318,8 @@ function highLight(val)
             listSrc[i].attr('rect/fill',{
                     type: 'linearGradient',
                     stops: [
-                      { offset: '0%', color: '#E6EBE0'},
-                      { offset: '100%', color: '#E6EBE0'}
+                      { offset: '0%', color: colorMap[listSrc[i]]},
+                      { offset: '100%', color: colorMap[listSrc[i]]}
                     ]
                     });
             listSrc[i].removeAttr('rect/filter');
