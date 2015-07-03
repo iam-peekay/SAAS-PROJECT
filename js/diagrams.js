@@ -1275,62 +1275,6 @@ graph.on('add remove change:source change:target', myAdjustVertices);
 paper1.on('cell:pointerup', myAdjustVertices);
 
 
-// FUNCTION FOR HIGHLIGHTING
-
-var counterArr = [0,0,0,0,0]; // # of 0's depends on the # of derived metrics
-var map={};
-map[0] = [source11, source12];
-map[1] = [source13, source21, source22];
-
-var colorMap={};
-colorMap[source11] = '#5CA4A9';
-colorMap[source12] = '#5CA4A9';
-colorMap[source13] = '#5CA4A9';
-colorMap[source21] = '#5CA4A9';
-colorMap[source22] = '#5CA4A9';
-
-function highLight(val)
-{
-    if(counterArr[val]%2==0)
-    {
-        listSrc = map[val];
-        var i=0;
-        for(i=0;i<listSrc.length;i++)
-        {
-            listSrc[i].removeAttr('rect/fill');
-            listSrc[i].attr('rect/fill',{
-                        type: 'linearGradient',
-                        stops: [
-                          { offset: '0%', color: '#F4F1BB'},
-                          { offset: '100%', color: '#F4F1BB'}
-                        ]
-                        });
-
-            listSrc[i].attr('rect/filter', { name: 'dropShadow', args: { dx: 2, dy: 2, blur: 3 } });
-        }
-    }
-    else
-    {
-        listSrc = map[val];
-        var i=0;
-        for(i=0;i<listSrc.length;i++)
-        {
-            listSrc[i].attr('rect/fill',{
-                    type: 'linearGradient',
-                    stops: [
-                      { offset: '0%', color: colorMap[listSrc[i]]},
-                      { offset: '100%', color: colorMap[listSrc[i]]}
-                    ]
-                    });
-            listSrc[i].removeAttr('rect/filter');
-        }
-    }
-    counterArr[val] += 1;
-}
-
-
-
-
 /* TESTING OUT HIGHLIGHT
 paper.on('cell:highlight', function(cellView, el) {
   alert("this shit suck!!!!");

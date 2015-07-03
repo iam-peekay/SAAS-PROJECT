@@ -9,19 +9,25 @@ var metricsDefinitions = [
   ['j_7', '<span><b>Content marketing: </b>\n A stretegic marketing approach focused on creating and distributing valuable and relevant content to attract and retain a targetted audience (both customers and prospects) with the goal of driving some profitable customer action (e.g. sign-ups, trials, etc.)</span>'],
   ['j_8', '<span><b>Search engine optimization (SEO): </b>\n A free form of marketing to increate visibility of a website in a search engine\'s unpaid results (i.e. "organic" or "earned" results) </span>'],
   ['j_56', '<span><b>Unique visitors: </b>\n Number of unique visitors who arrive at company’s website for the 1st time and proceed to browse. Even if the same visitor visits the site more than once in that period, they are counted only once</span>'],
-  ['j_10', '<span><b>Marketing Qualified Leads: </b>\n Leads who are potentially interesting that a company gathers more information on by exposed them to the company’s lead nurturing email campaign. An MQL will continue to be nurtured until they are either disqualified as a lead or ready to be handed off to a salesperson</span>'],
-  ['j_11', '<span><b>Sales Qualified Leads: </b>\n High potential leads that a company determines as a fit based on their pre-determined criteria. These leads get handed off to sales immediately for follow up consultation</span>'],
+  ['j_10', '<span><b>Marketing qualified leads: </b>\n Leads who are potentially interesting that a company gathers more information on by exposed them to the company’s lead nurturing email campaign. An MQL will continue to be nurtured until they are either disqualified as a lead or ready to be handed off to a salesperson</span>'],
+  ['j_11', '<span><b>Sales qualified leads: </b>\n High potential leads that a company determines as a fit based on their pre-determined criteria. These leads get handed off to sales immediately for follow up consultation</span>'],
   ['j_12', '<span><b>Indirect channel sales: </b>\n Sales involving one or more intermediaries. Examples include retail (selling through a brick-and-mortar business or an ecommerce company like Amazon), Value-added resellers (VARs) that bundle a vendor\'s product or service with other products and services to bundled solution for customers, Managed service providers (MSPs), Consultants, Systems integrators (SIs), Original equipment manufacturers (OEMs), ISVs, wholesalers and distributors</span>'],
   ['j_13', '<span><b>Outbound prospecting: </b>\n Cold calling to reach out to prospective customers rather than waiting for them to come to you. Typically, this is handled by the sales development (SDRs) reps within a sales team </span>'],
   ['j_14', '<span><b>Opportunities: </b>\n Number of of visitors who sign-up for a trial (freemium model) or number of leads who convert to POCs</span>'],
   ['j_15', '<span><b>Closed deals: </b>\n Number of opportunities that converted to paying customers</span>'],
   ['j_16', '<span><b>Bookings: </b>\n Total value, for software and services, of committed contracts with customers sold in that period. If a contract period exceeds one year, it should be annualized to represent the value for the first year. May include renewals and upsells to existing customers</span>'],
   ['j_17', '<span><b>New customers: </b>\n Number of customers that began paying in the current period </span>']
+  ['j_18', '<span><b>Churned customers: </b>\n Number of paying accounts (customers) that churned in the current month </span>'],
+  ['j_19', '<span><b>Existing customers: </b>\n Total number of existing paying accounts (customers) in the current month (excluding new, churned, upgraded and downgraded customers)</span>'],
+  ['j_20', '<span><b>Upgrade customers: </b>\nNumber of existing paying accounts (customers) that upgraded their plan in the current month</span>'],
+  ['j_21', '<span><b>No change customers: </b>\nNumber of existing paying accounts (customers) that neither upgraded nor downgraded in the current month</span>'],
+  ['j_22', '<span><b>Downgrade customers: </b>\n Number of existing paying accounts (customers) that downgraded their plan in the current month</span>'],
+  ['j_23', '<span><b>Total paying customers: </b>\nExisting customers + New customers - Churned customers</span>']
   ];
 
 function hoverBox(arg1){
       $(document).ready(function() {
-          for (var i = 0; i < metricsDefinitions.length; i += 1) {
+          for (var i = 0; i < arg1.length; i += 1) {
             $('#' + arg1[i][0] + '').tooltipster({
               content: $('<span>' + arg1[i][1] + '</span>'),
               maxWidth: 300,
@@ -32,6 +38,8 @@ function hoverBox(arg1){
         });
       }});
       }
+
+hoverBox(metricsDefinitions);
 
 // INPUT & FUNCTION FOR DERIVED METRICS HOVERBOXES
 
@@ -56,7 +64,7 @@ function derivedHoverBox(arg2){
       }
 
 
-hoverBox(metricsDefinitions);
+
 derivedHoverBox(derivedMetricsDefinitions);
 
 // FUNCTION FOR HIGHLIGHTING
@@ -74,11 +82,9 @@ colorMap[source12] = '#5CA4A9';
 colorMap[source13] = '#5CA4A9';
 colorMap[source21] = '#5CA4A9';
 colorMap[source22] = '#5CA4A9';
-
-
-colorMap[source611] = '#5CA4A9';
-colorMap[source613] = '#5CA4A9';
-colorMap[source71] = '#5CA4A9';
+colorMap[source611] = '#ED6A5A';
+colorMap[source613] = '#ED6A5A';
+colorMap[source71] = '#ED6A5A';
 colorMap[source811] = '#5CA4A9';
 
 
@@ -88,7 +94,7 @@ function highLight(val)
     {
         listSrc = map[val];
         var i=0;
-        for(i=0;i<listSrc.length;i++)
+        for(i = 0; i <listSrc.length; i++)
         {
             listSrc[i].removeAttr('rect/fill');
             listSrc[i].attr('rect/fill',{
@@ -106,7 +112,7 @@ function highLight(val)
     {
         listSrc = map[val];
         var i=0;
-        for(i=0;i<listSrc.length;i++)
+        for(i = 0; i <listSrc.length; i++)
         {
             listSrc[i].attr('rect/fill',{
                     type: 'linearGradient',
@@ -128,8 +134,8 @@ function highLight(val)
   // 2-D array of elements that need to hidden at start
   // 2-D array of parentIDs that matches to the index of the parentMap
   // for loop with IDs and links
+
 /*
-$(document).ready(function() {
   var parentID =['j_56', 'j_11', 'j_19', 'j_24', 'j_27', 'j_30', 'j_36', 'j_37'];
   var parentMap = {};
   parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_57', 'j_58', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65'];
@@ -141,10 +147,45 @@ $(document).ready(function() {
   parentMap[6] = ['j_38', 'j_39', 'j_40', 'j_41', 'j_42', 'j_43', 'j_95', 'j_96', 'j_97', 'j_98', 'j_99', 'j_100'];
   parentMap[7] = ['j_44', 'j_45', 'j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_101', 'j_102', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112'];
 
+ $(document).ready(function() {
   for (var i = 0; i < parentID.length; i++) {
     for (var j=0; j < parentMap[i].length; j++) {
           $('#' + parentMap[i][j]).css({'display': 'none'});
     }
   }
+
 });
+
+$(document).ready(function() {
+for (let i = 0; i <parentID.length; i++) {
+  $('#' + parentID[i]).click( function()  {
+    for (var j = 0; j < parentMap[i].length; j++) {
+      $('#' + parentMap[doubs][j]).css({'display': 'initial'});
+  }
+});
+}});
+
+*/
+
+// SHOW ON CLICK
+/*
+$(document).ready(function () {
+  var parentID =['j_56', 'j_11', 'j_19', 'j_24', 'j_27', 'j_30', 'j_36', 'j_37'];
+  var parentMap = {};
+  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_57', 'j_58', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65'];
+  parentMap[1] = ['j_12', 'j_13', 'j_69', 'j_70'];
+  parentMap[2] = ['j_20','j_21', 'j_22', 'j_75', 'j_76', 'j_77'];
+  parentMap[3] = ['j_25', 'j_26', 'j_82', 'j_83'];
+  parentMap[4] = ['j_28', 'j_29', 'j_85', 'j_86'];
+  parentMap[5] = ['j_31', 'j_32', 'j_88', 'j_89'];
+  parentMap[6] = ['j_38', 'j_39', 'j_40', 'j_41', 'j_42', 'j_43', 'j_95', 'j_96', 'j_97', 'j_98', 'j_99', 'j_100'];
+  parentMap[7] = ['j_44', 'j_45', 'j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_101', 'j_102', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112'];
+
+  for (var i = 0; i <parentID.length; i++) {
+    if( $('#' + parentID[i]).click() ) {
+      for (var j = 0; j < parentMap[i].length; j++) {
+        $('#' + parentMap[i][j]).css({'display': 'show'});
+    }
+  }
+}
 */
