@@ -6,14 +6,14 @@ var graph = new joint.dia.Graph;
 
 var paper1 = new joint.dia.Paper({
     el: $('#mydiagram'),
-    width: 1000,
+    width: 1200,
     height: 3050,
     model: graph,
     gridSize: 1
 
 });
 
-paper1.setOrigin(-250,10);
+paper1.setOrigin(-250,50);
 
 
 
@@ -1174,123 +1174,9 @@ var link1201 = new joint.dia.Link({
 graph.addCells([source11, source12, source13, source14, source21, source22, source23, source24, source25, source31, source32, source321, source322, source41, source51, source511, source611, source612, source613, source613a, source613b, source613c, source71, source81, source811, source812, source91, source911, source912, source101, source1011, source1012, source201, source202, source203, source301, source302, source401, source501, source502, source601, source602, source603, source701, source702, source703, source801, source802, source901, source902, source903, source1100, source1101, source1200, source1201, target1, link11, link12, link13, link14, link21, link22, link23, link24, link25, link31, link32, link32a, link321, link322, link41, link51, link511, link611, link613a,  link613b, link613c, link611, link612, link613, link71, link81, link811, link812, link91, link911, link912, link101, link1011, link1012, link201, link202, link203, link301, link302, link401, link501, link502, link601, link602, link603, link701, link702, link703, link801, link802, link901, link902, link903, link1100, link1101, link1200, link1201]);
 
 // FIT CONTENT TO PAPER
+
 paper1.scaleContentToFit({
-        padding: 30,
-        minScale: .5,
+        padding: 50,
+        minScale: .7,
         maxScale: 1
     });
-
-// FIXING MULTIPLE LINKS BETWEEN ELEMENTS
-
-function adjustVertices(graph, cell) {
-
-    // If the cell is a view, find its model.
-    cell = cell.model || cell;
-
-    if (cell instanceof joint.dia.Element) {
-
-        _.chain(graph.getConnectedLinks(cell)).groupBy(function(link) {
-            // the key of the group is the model id of the link's source or target, but not our cell id.
-            return _.omit([link.get('source').id, link.get('target').id], cell.id)[0];
-        }).each(function(group, key) {
-            // If the member of the group has both source and target model adjust vertices.
-            if (key !== 'undefined') adjustVertices(graph, _.first(group));
-        });
-
-        return;
-    }
-
-    // The cell is a link. Let's find its source and target models.
-    var srcId = cell.get('source').id || cell.previous('source').id;
-    var trgId = cell.get('target').id || cell.previous('target').id;
-
-    // If one of the ends is not a model, the link has no siblings.
-    if (!srcId || !trgId) return;
-
-    var siblings = _.filter(graph.getLinks(), function(sibling) {
-
-        var _srcId = sibling.get('source').id;
-        var _trgId = sibling.get('target').id;
-
-        return (_srcId === srcId && _trgId === trgId) || (_srcId === trgId && _trgId === srcId);
-    });
-
-    switch (siblings.length) {
-
-    case 0:
-        // The link was removed and had no siblings.
-        break;
-
-    case 1:
-        // There is only one link between the source and target. No vertices needed.
-        cell.unset('vertices');
-        break;
-
-    default:
-
-        // There is more than one siblings. We need to create vertices.
-
-        // First of all we'll find the middle point of the link.
-        var srcCenter = graph.getCell(srcId).getBBox().center();
-        var trgCenter = graph.getCell(trgId).getBBox().center();
-        var midPoint = g.line(srcCenter, trgCenter).midpoint();
-
-        // Then find the angle it forms.
-        var theta = srcCenter.theta(trgCenter);
-
-        // This is the maximum distance between links
-        var gap = 20;
-
-        _.each(siblings, function(sibling, index) {
-
-            // We want the offset values to be calculated as follows 0, 20, 20, 40, 40, 60, 60 ..
-            var offset = gap * Math.ceil(index / 2);
-
-            // Now we need the vertices to be placed at points which are 'offset' pixels distant
-            // from the first link and forms a perpendicular angle to it. And as index goes up
-            // alternate left and right.
-            //
-            //  ^  odd indexes
-            //  |
-            //  |---->  index 0 line (straight line between a source center and a target center.
-            //  |
-            //  v  even indexes
-            var sign = index % 2 ? 1 : -1;
-            var angle = g.toRad(theta + sign * 90);
-
-            // We found the vertex.
-            var vertex = g.point.fromPolar(offset, angle, midPoint);
-
-            sibling.set('vertices', [{ x: vertex.x, y: vertex.y }]);
-        });
-    }
-};
-
-
-var myAdjustVertices = _.partial(adjustVertices, graph);
-
-// adjust vertices when a cell is removed or its source/target was changed
-graph.on('add remove change:source change:target', myAdjustVertices);
-
-// also when an user stops interacting with an element.
-paper1.on('cell:pointerup', myAdjustVertices);
-
-
-/* TESTING OUT HIGHLIGHT
-paper.on('cell:highlight', function(cellView, el) {
-  alert("this shit suck!!!!");
-});
-
-source11.highlight();
-*/
-
-
-
-
-/* on click events
-paper1.on('cell:pointerclick',
-    function(cellView, evt, x, y) {
-        alert('cell view ' + cellView.model.id + ' was clicked');
-    }
-);
-*/
