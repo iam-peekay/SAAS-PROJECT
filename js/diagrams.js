@@ -13,13 +13,13 @@ var paper1 = new joint.dia.Paper({
 
 });
 
-paper1.setOrigin(-250,0);
+paper1.setOrigin(-250,10);
 
 
 
 // ROW 1: TOP OF FUNNEL SOURCES
 var source11 = new joint.shapes.basic.Rect({
-    position: { x: 400, y: 50 },
+    position: { x: 400, y: 0 },
     size: { width: 120, height: 60 },
     attrs: { rect: {
                 fill: {
@@ -60,7 +60,8 @@ var source24 = source11.clone().translate(-120, 240).attr('text/text', 'SEO');
 var source25 = source11.clone().translate(460, 220).attr('text/text', 'Other paid\n sources');
 
 // UNIQUE VISITORS BOX
-var target1 = source11.clone().translate(180, 280).attr({text: {text: 'Unique visitors'}, rect: {fill: '#ED6A5A'}});
+var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Unique visitors'}, rect: {fill: '#ED6A5A'}});
+// target1 was y: 280 originally
 
 target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(source21).embed(source22).embed(source23).embed(source24).embed(source25);
 
@@ -69,21 +70,21 @@ var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
 var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL');
 var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
 var source322 = source32.clone().translate(180, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
-var source41 = source32.clone().translate(0, 100).attr('text/text', 'Opportunities');
+var source41 = source32.clone().translate(0, 240).attr('text/text', 'Opportunities');
 
 source32.embed(source321).embed(source322);
 
 // TOP OF LINE
-var source51 = source32.clone().translate(0, 200).attr('text/text', 'Closed deals');
-var source511 = source32.clone().translate(180, 200).attr('text/text', 'Bookings');
-var source611 = source32.clone().translate(0, 300).attr('text/text', 'New customers');
-var source612 = source611.clone().translate(180, 0).attr('text/text', 'Churned\n customers');
-var source613 = source611.clone().translate(-180, 0).attr('text/text', 'Existing\n customers');
+var source51 = source41.clone().translate(0, 120).attr('text/text', 'Closed deals');
+var source511 = source51.clone().translate(180, 0).attr('text/text', 'Bookings');
+var source611 = source51.clone().translate(0, 120).attr('text/text', 'New customers');
+var source612 = source611.clone().translate(180, 120).attr('text/text', 'Churned\n customers');
+var source613 = source611.clone().translate(-180, 120).attr('text/text', 'Existing\n customers');
 var source613a = source613.clone().translate(-180, -90).attr({text: {text: 'Upgrade \n customers'}, rect: {fill:  '#5CA4A9'}});
 var source613b = source613.clone().translate(-180, 0).attr({text: {text: 'No change \n customers'}, rect: {fill:  '#5CA4A9'}});
 var source613c = source613.clone().translate(-180, 90).attr({text: {text: 'Downgrade \n customers'}, rect: {fill:  '#5CA4A9'}});
-var source71 = source611.clone().translate(0, 100).attr('text/text', 'Total paying\n customers');
-var source81 = source71.clone().translate(0, 100).attr('text/text', 'Total revenue');
+var source71 = source611.clone().translate(0, 120).attr('text/text', 'Total paying\n customers');
+var source81 = source71.clone().translate(0, 180).attr('text/text', 'Total revenue');
 var source811 = source81.clone().translate(180, -45).attr({text: {text: 'MRR/ARR'}, rect: {fill:  '#5CA4A9'}});
 var source812 = source81.clone().translate(180, 45).attr({text: {text: 'Maintenance & \n services revenue'}, rect: {fill: '#5CA4A9'}});
 
@@ -107,7 +108,7 @@ var source201 = source101.clone().translate(0, 180).attr('text/text', 'Sales &\n
 var source202 = source101.clone().translate(240, 200).attr('text/text', 'Research &\n development');
 var source203 = source101.clone().translate(-320, 200).attr('text/text', 'General &\n administrative');
 var source301 = source201.clone().translate(-220, 120).attr('text/text', 'Not\n CAC-related');
-var source302 = source201.clone().translate(0, 460).attr('text/text', 'CAC-related');
+var source302 = source201.clone().translate(220, 120).attr('text/text', 'CAC-related');
 var source401 = source301.clone().translate(0, 100).attr('text/text', 'Customer service\n costs');
 var source501 = source401.clone().translate(90, 100).attr({text: {text: '# of \n tickets'}, rect: {fill: '#5CA4A9'}});;
 var source502 = source401.clone().translate(-90, 100).attr({text: {text: 'Cost per \n ticket'}, rect: {fill: '#5CA4A9'}});;

@@ -70,27 +70,27 @@ derivedHoverBox(derivedMetricsDefinitions);
 // FUNCTION FOR HIGHLIGHTING
 
 var counterArr = [0,0,0,0,0]; // # of 0's depends on the # of derived metrics
-var map={};
+
+var map={}; // connects each derived metric to it's derivatives
 map[0] = [source811];
 map[1] = [source611, source71];
 map[2] = [source613, source71];
 
+var sourceIDMap = []; // links ID and element name
+sourceIDMap[0] = ['j_14', source41];
+sourceIDMap[1] = ['j_19', source613];
+sourceIDMap[2] = ['j_23', source71];
 
-var colorMap={};
-colorMap[source11] = '#5CA4A9';
-colorMap[source12] = '#5CA4A9';
-colorMap[source13] = '#5CA4A9';
-colorMap[source21] = '#5CA4A9';
-colorMap[source22] = '#5CA4A9';
-colorMap[source611] = '#ED6A5A';
-colorMap[source613] = '#ED6A5A';
-colorMap[source71] = '#ED6A5A';
-colorMap[source811] = '#5CA4A9';
+var colorMap={}; // links ID and original element color
+colorMap['j_14'] = '#ED6A5A';
+colorMap['j_19'] = '#ED6A5A';
+colorMap['j_23'] = '#ED6A5A';
+
 
 
 function highLight(val)
 {
-    if(counterArr[val]%2==0)
+    if(counterArr[val] % 2 == 0)
     {
         listSrc = map[val];
         var i=0;
@@ -114,11 +114,18 @@ function highLight(val)
         var i=0;
         for(i = 0; i <listSrc.length; i++)
         {
+          var myColor;
+          for ( var j = 0; j < sourceIDMap.length; j++ )
+          {
+            if (sourceIDMap[j][1].id == listSrc[i].id) {
+              myColor = colorMap[sourceIDMap[j][0]];
+            }
+          }
             listSrc[i].attr('rect/fill',{
                     type: 'linearGradient',
                     stops: [
-                      { offset: '0%', color: colorMap[listSrc[i]]},
-                      { offset: '100%', color: colorMap[listSrc[i]]}
+                      { offset: '0%', color: myColor},
+                      { offset: '100%', color: myColor}
                     ]
                     });
             listSrc[i].removeAttr('rect/filter');
@@ -135,7 +142,7 @@ function highLight(val)
   // 2-D array of parentIDs that matches to the index of the parentMap
   // for loop with IDs and links
 
-/*
+
   var parentID =['j_56', 'j_11', 'j_19', 'j_24', 'j_27', 'j_30', 'j_36', 'j_37'];
   var parentMap = {};
   parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_57', 'j_58', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65'];
@@ -147,6 +154,7 @@ function highLight(val)
   parentMap[6] = ['j_38', 'j_39', 'j_40', 'j_41', 'j_42', 'j_43', 'j_95', 'j_96', 'j_97', 'j_98', 'j_99', 'j_100'];
   parentMap[7] = ['j_44', 'j_45', 'j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_101', 'j_102', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112'];
 
+
  $(document).ready(function() {
   for (var i = 0; i < parentID.length; i++) {
     for (var j=0; j < parentMap[i].length; j++) {
@@ -156,16 +164,126 @@ function highLight(val)
 
 });
 
-$(document).ready(function() {
-for (let i = 0; i <parentID.length; i++) {
-  $('#' + parentID[i]).click( function()  {
-    for (var j = 0; j < parentMap[i].length; j++) {
-      $('#' + parentMap[doubs][j]).css({'display': 'initial'});
-  }
-});
-}});
 
-*/
+$(document).ready(function() {
+  $('#' + parentID[0]).click( function()  {
+    $('#' + parentID[0]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[0].length; j++) {
+      if( $('#' + parentMap[0][j]).css('display')=='none' ) {
+        target1.transition('position/y', 260);
+        source31.transition('position/y', 340);
+        source32.transition('position/y', 340);
+        $('#' + parentMap[0][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[0][j]).css({'display': 'none'});
+        target1.transition('position/y', 100);
+        source31.transition('position/y', 220);
+        source32.transition('position/y', 220);
+      }
+}
+});
+});
+
+$(document).ready(function() {
+  $('#' + parentID[1]).click( function()  {
+    $('#' + parentID[1]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[1].length; j++) {
+      if( $('#' + parentMap[1][j]).css('display')=='none' ) {
+        if ( $('#j_1').css('display') == 'none') {
+          $('#' + parentMap[1][j]).css({'display': 'initial'});
+        } else {
+          source321.transition('position/y', 300);
+          source322.transition('position/y', 420);
+          $('#' + parentMap[1][j]).css({'display': 'initial'});
+        }
+      } else {
+        $('#' + parentMap[1][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+$(document).ready(function() {
+  $('#' + parentID[2]).click( function()  {
+    $('#' + parentID[2]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[2].length; j++) {
+      if( $('#' + parentMap[2][j]).css('display')=='none' ) {
+        $('#' + parentMap[2][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[2][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+$(document).ready(function() {
+  $('#' + parentID[3]).click( function()  {
+    $('#' + parentID[3]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[3].length; j++) {
+      if( $('#' + parentMap[3][j]).css('display')=='none' ) {
+        $('#' + parentMap[3][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[3][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+
+$(document).ready(function() {
+  $('#' + parentID[4]).click( function()  {
+    $('#' + parentID[4]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[4].length; j++) {
+      if( $('#' + parentMap[4][j]).css('display')=='none' ) {
+        $('#' + parentMap[4][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[4][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+$(document).ready(function() {
+  $('#' + parentID[5]).click( function()  {
+    $('#' + parentID[5]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[5].length; j++) {
+      if( $('#' + parentMap[5][j]).css('display')=='none' ) {
+        $('#' + parentMap[5][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[5][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+
+$(document).ready(function() {
+  $('#' + parentID[6]).click( function()  {
+    $('#' + parentID[6]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[6].length; j++) {
+      if( $('#' + parentMap[6][j]).css('display')=='none' ) {
+        $('#' + parentMap[6][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[6][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
+
+$(document).ready(function() {
+  $('#' + parentID[7]).click( function()  {
+    $('#' + parentID[7]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[7].length; j++) {
+      if( $('#' + parentMap[7][j]).css('display')=='none' ) {
+        $('#' + parentMap[7][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[7][j]).css({'display': 'none'});
+      }
+}
+});
+});
+
 
 // SHOW ON CLICK
 /*
