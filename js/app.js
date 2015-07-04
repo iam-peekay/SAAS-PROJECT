@@ -16,7 +16,7 @@ var metricsDefinitions = [
   ['j_14', '<span><b>Opportunities: </b>\n Number of of visitors who sign-up for a trial (freemium model) or number of leads who convert to POCs</span>'],
   ['j_15', '<span><b>Closed deals: </b>\n Number of opportunities that converted to paying customers</span>'],
   ['j_16', '<span><b>Bookings: </b>\n Total value, for software and services, of committed contracts with customers sold in that period. If a contract period exceeds one year, it should be annualized to represent the value for the first year. May include renewals and upsells to existing customers</span>'],
-  ['j_17', '<span><b>New customers: </b>\n Number of customers that began paying in the current period </span>']
+  ['j_17', '<span><b>New customers: </b>\n Number of customers that began paying in the current period </span>'],
   ['j_18', '<span><b>Churned customers: </b>\n Number of paying accounts (customers) that churned in the current month </span>'],
   ['j_19', '<span><b>Existing customers: </b>\n Total number of existing paying accounts (customers) in the current month (excluding new, churned, upgraded and downgraded customers)</span>'],
   ['j_20', '<span><b>Upgrade customers: </b>\nNumber of existing paying accounts (customers) that upgraded their plan in the current month</span>'],
@@ -51,7 +51,7 @@ var derivedMetricsDefinitions = [
 
 function derivedHoverBox(arg2){
       $(document).ready(function() {
-          for (var i = 0; i < derivedMetricsDefinitions.length; i += 1) {
+          for (var i = 0; i < arg2.length; i += 1) {
             $('#' + arg2[i][0] + '').tooltipster({
               content: $('<span>' + arg2[i][1] + '</span>'),
               maxWidth: 400,
