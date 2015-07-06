@@ -72,13 +72,13 @@
                 <a href="#j_10" id="ARPAnew" onclick = highLight('1'); >ARPA (new)</a>
             </li>
             <li>
-                <a href="#j_10" id= "ARPAexisting" onclick = highLight('2'); >APRA (existing)</a>
+                <a href="#j_10" id= "ARPAexisting" onclick = highLight('2'); >ARPA (existing)</a>
             </li>
             <li>
-                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 4</a>
+                <a href="#diagram" id="ACV" onclick = highLight('3'); >ACV</a>
             </li>
             <li>
-                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 5</a>
+                <a href="#diagram" id="CACblended" onclick = highLight('4'); >CAC (blended)</a>
             </li>
             <li>
                 <a href="#diagram" onclick = $("#menu-close").click(); >Metric 6</a>
@@ -124,7 +124,15 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2><strong>SaaS Flow Chart</strong></h2>
                     <div id="diagram-description">
-                      <p>Hover on each box to learn more <br>Click on the navigation bar on the right side to see a dictionary of SaaS metrics</br></p>
+                      <dl>
+                        <dt>Hover</dt>
+                          <dd>Hover on each box to learn more</dd>
+                        <dt>Click</dt>
+                          <dd>Click on boxes with a '*' to expand subelements</dd>
+                        <dt>Navigation bar</dt>
+                          <dd>Click on the navigation bar on the right side to see a dictionary of SaaS metrics</dd>
+
+                      </ul>
                     <div>
                     <div id="mydiagram">
 
@@ -209,7 +217,7 @@
         });
     });
     </script>
-    
+
     <!-- PK custom JavaScript -->
     <script src="js/diagrams.js"></script>
     <script type="text/javascript" src="js/app.js"></script>

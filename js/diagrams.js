@@ -6,7 +6,7 @@ var graph = new joint.dia.Graph;
 
 var paper1 = new joint.dia.Paper({
     el: $('#mydiagram'),
-    width: 1200,
+    width: 1100,
     height: 3050,
     model: graph,
     gridSize: 1
@@ -60,14 +60,14 @@ var source24 = source11.clone().translate(-120, 240).attr('text/text', 'SEO');
 var source25 = source11.clone().translate(460, 220).attr('text/text', 'Other paid\n sources');
 
 // UNIQUE VISITORS BOX
-var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Unique visitors'}, rect: {fill: '#ED6A5A'}});
+var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Unique visitors*'}, rect: {fill: '#ED6A5A'}});
 // target1 was y: 280 originally
 
 target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(source21).embed(source22).embed(source23).embed(source24).embed(source25);
 
 // MIDDLE OF FUNNEL BOXES
 var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
-var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL');
+var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL*');
 var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
 var source322 = source32.clone().translate(180, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
 var source41 = source32.clone().translate(0, 240).attr('text/text', 'Opportunities');
@@ -75,17 +75,19 @@ var source41 = source32.clone().translate(0, 240).attr('text/text', 'Opportuniti
 source32.embed(source321).embed(source322);
 
 // TOP OF LINE
-var source51 = source41.clone().translate(0, 120).attr('text/text', 'Closed deals');
+var source51 = source41.clone().translate(0, 180).attr('text/text', 'Closed deals');
 var source511 = source51.clone().translate(180, 0).attr('text/text', 'Bookings');
-var source611 = source51.clone().translate(0, 120).attr('text/text', 'New customers');
-var source612 = source611.clone().translate(180, 120).attr('text/text', 'Churned\n customers');
-var source613 = source611.clone().translate(-180, 120).attr('text/text', 'Existing\n customers');
+var source611 = source51.clone().translate(0, 180).attr('text/text', 'New customers*');
+var source611a = source611.clone().translate(180, -50).attr({text: {text: 'Paid \n new customers'}, rect: {fill:  '#5CA4A9'}});
+var source611b = source611.clone().translate(180, 50).attr({text: {text: 'Free \n new customers'}, rect: {fill:  '#5CA4A9'}});
+var source612 = source611.clone().translate(180, 180).attr('text/text', 'Churned\n customers');
+var source613 = source611.clone().translate(-180, 180).attr('text/text', 'Existing\n customers*');
 var source613a = source613.clone().translate(-180, -90).attr({text: {text: 'Upgrade \n customers'}, rect: {fill:  '#5CA4A9'}});
 var source613b = source613.clone().translate(-180, 0).attr({text: {text: 'No change \n customers'}, rect: {fill:  '#5CA4A9'}});
 var source613c = source613.clone().translate(-180, 90).attr({text: {text: 'Downgrade \n customers'}, rect: {fill:  '#5CA4A9'}});
-var source71 = source611.clone().translate(0, 120).attr('text/text', 'Total paying\n customers');
-var source81 = source71.clone().translate(0, 180).attr('text/text', 'Total revenue');
-var source811 = source81.clone().translate(180, -45).attr({text: {text: 'MRR/ARR'}, rect: {fill:  '#5CA4A9'}});
+var source71 = source611.clone().translate(0, 180).attr('text/text', 'Total paying\n customers');
+var source81 = source71.clone().translate(0, 180).attr('text/text', 'Total revenue*');
+var source811 = source81.clone().translate(180, -45).attr({text: {text: 'Recurring\n revenue \n(mrr/arr)'}, rect: {fill:  '#5CA4A9'}});
 var source812 = source81.clone().translate(180, 45).attr({text: {text: 'Maintenance & \n services revenue'}, rect: {fill: '#5CA4A9'}});
 
 source613.embed(source613a).embed(source613b).embed(source613c);
@@ -93,10 +95,10 @@ source71.embed(source611).embed(source612).embed(source613);
 source81.embed(source811).embed(source812);
 
 // GROSS PROFIT
-var source91 = source81.clone().translate(0, 180).attr('text/text', 'COGS');
+var source91 = source81.clone().translate(0, 180).attr('text/text', 'COGS*');
 var source911 = source91.clone().translate(180, -45).attr({text: {text: 'Cost of \n product'}, rect: {fill:  '#5CA4A9'}});
 var source912 = source91.clone().translate(180, 45).attr({text: {text: 'Cost of \n maint & services'}, rect: {fill:  '#5CA4A9'}});
-var source101 = source91.clone().translate(0, 180).attr('text/text', 'Gross Profit');
+var source101 = source91.clone().translate(0, 180).attr('text/text', 'Gross Profit*');
 var source1011 = source101.clone().translate(180, -45).attr({text: {text: 'Product \n gross profit'}, rect: {fill: '#5CA4A9'}});
 var source1012 = source101.clone().translate(180, 45).attr({text: {text: 'Maint/services \n gross profit'}, rect: {fill: '#5CA4A9'}});
 
@@ -107,8 +109,8 @@ source101.embed(source1011).embed(source1012);
 var source201 = source101.clone().translate(0, 180).attr('text/text', 'Sales &\n marketing');
 var source202 = source101.clone().translate(240, 200).attr('text/text', 'Research &\n development');
 var source203 = source101.clone().translate(-320, 200).attr('text/text', 'General &\n administrative');
-var source301 = source201.clone().translate(-220, 120).attr('text/text', 'Not\n CAC-related');
-var source302 = source201.clone().translate(220, 120).attr('text/text', 'CAC-related');
+var source301 = source201.clone().translate(-220, 120).attr('text/text', 'Not\n CAC-related*');
+var source302 = source201.clone().translate(220, 120).attr('text/text', 'CAC-related*');
 var source401 = source301.clone().translate(0, 100).attr('text/text', 'Customer service\n costs');
 var source501 = source401.clone().translate(90, 100).attr({text: {text: '# of \n tickets'}, rect: {fill: '#5CA4A9'}});;
 var source502 = source401.clone().translate(-90, 100).attr({text: {text: 'Cost per \n ticket'}, rect: {fill: '#5CA4A9'}});;
@@ -470,6 +472,42 @@ var link511 = new joint.dia.Link({
 
 var link611 = new joint.dia.Link({
     source: { id: source51.id },
+    target: { id: source611.id },
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
+    attrs: {
+      '.connection': {
+        stroke: '#384047',
+        'stroke-width': 3
+      },
+      '.marker-target': {
+        stroke: '#F26D6D',
+        fill: '#F26D6D',
+        d: 'M 10 0 L 0 5 L 10 10 z'
+      }
+    }
+});
+
+var link611a = new joint.dia.Link({
+    source: { id: source611a.id },
+    target: { id: source611.id },
+    // router: { name: 'manhattan'},
+    connector: {name: 'smooth'},
+    attrs: {
+      '.connection': {
+        stroke: '#384047',
+        'stroke-width': 3
+      },
+      '.marker-target': {
+        stroke: '#F26D6D',
+        fill: '#F26D6D',
+        d: 'M 10 0 L 0 5 L 10 10 z'
+      }
+    }
+});
+
+var link611b = new joint.dia.Link({
+    source: { id: source611b.id },
     target: { id: source611.id },
     // router: { name: 'manhattan'},
     connector: {name: 'smooth'},
@@ -1171,7 +1209,17 @@ var link1201 = new joint.dia.Link({
 });
 
 // ADD CELLS TO GRAPH
-graph.addCells([source11, source12, source13, source14, source21, source22, source23, source24, source25, source31, source32, source321, source322, source41, source51, source511, source611, source612, source613, source613a, source613b, source613c, source71, source81, source811, source812, source91, source911, source912, source101, source1011, source1012, source201, source202, source203, source301, source302, source401, source501, source502, source601, source602, source603, source701, source702, source703, source801, source802, source901, source902, source903, source1100, source1101, source1200, source1201, target1, link11, link12, link13, link14, link21, link22, link23, link24, link25, link31, link32, link32a, link321, link322, link41, link51, link511, link611, link613a,  link613b, link613c, link611, link612, link613, link71, link81, link811, link812, link91, link911, link912, link101, link1011, link1012, link201, link202, link203, link301, link302, link401, link501, link502, link601, link602, link603, link701, link702, link703, link801, link802, link901, link902, link903, link1100, link1101, link1200, link1201]);
+graph.addCells([source11, source12, source13, source14, source21, source22, source23, source24, source25, source31, source32, source321, source322, source41, source51, source511, source611, source611a, source611b, source612, source613, source613a, source613b, source613c, source71, source81, source811, source812, source91, source911, source912, source101, source1011, source1012, source201, source202, source203, source301, source302, source401, source501, source502, source601, source602, source603, source701, source702, source703, source801, source802, source901, source902, source903, source1100, source1101, source1200, source1201, target1, link11, link12, link13, link14, link21, link22, link23, link24, link25, link31, link32, link32a, link321, link322, link41, link51, link511, link611, link613a,  link613b, link613c, link611, link612, link613, link71, link81, link811, link812, link91, link911, link912, link101, link1011, link1012, link201, link202, link203, link301, link302, link401, link501, link502, link601, link602, link603, link611a, link611b, link701, link702, link703, link801, link802, link901, link902, link903, link1100, link1101, link1200, link1201]);
+
+target1.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source32.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4,blur: 4, color: '#5CA4A9'} });
+source611.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source613.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9'} });
+source81.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source91.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source101.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source301.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
+source302.attr('rect/filter', { name: 'dropShadow', args: { dx: 4, dy: 4, blur: 4, color: '#5CA4A9' } });
 
 // FIT CONTENT TO PAPER
 

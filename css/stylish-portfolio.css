@@ -183,13 +183,14 @@ header {
 }
 
 .diagram h2 {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 #diagram-description {
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin: -10px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 /* Call to Action */

@@ -22,7 +22,18 @@ var metricsDefinitions = [
   ['j_20', '<span><b>Upgrade customers: </b>\nNumber of existing paying accounts (customers) that upgraded their plan in the current month</span>'],
   ['j_21', '<span><b>No change customers: </b>\nNumber of existing paying accounts (customers) that neither upgraded nor downgraded in the current month</span>'],
   ['j_22', '<span><b>Downgrade customers: </b>\n Number of existing paying accounts (customers) that downgraded their plan in the current month</span>'],
-  ['j_23', '<span><b>Total paying customers: </b>\nExisting customers + New customers - Churned customers</span>']
+  ['j_23', '<span><b>Total paying customers: </b>\nExisting customers + New customers - Churned customers</span>'],
+  ['j_24', '<span><b>Total Revenue: </b>\nTotal GAAP revenue recognized for the period (MRR/ARR + Services revenue + Maintenance revenue + Other revenue)</span>'],
+  ['j_25', '<span><b>Recurring revenue (MRR/ARR): </b>\nRecurring revenue earned for a product or service that is highly likely to continue in the future. This is revenue that is predictable, stable and can be counted on in the future with a high degree of certainty. Excludes one-time fees, and variable, usage, or consumption fees</span>'],
+  ['j_26', '<span><b>Maintenance & services revenue: </b>\nTotal revenue recognized from professional services, maintenance, training or education services (excludes subscription revenues)</span>'],
+  ['j_27', '<span><b>COGS: </b>\nTotal direct and indirect costs of products and services that have been sold (Cost of product + cost of services)</span>'],
+  ['j_28', '<span><b>Cost of product: </b>\nAll direct expenses of software or services that have been sold. For SaaS companies, this primarily includes hosting services, support costs, data center costs, depreciation or operating lease expenses associated with computer equipment and software, overhead and amortization expense associated with capitalized software</span>'],
+  ['j_29', '<span><b>Cost of maintenance & services: </b>\nAll costs associated with providing professional services (e.g. employee costs for professional services personnel)</span>'],
+  ['j_30', '<span><b>Gross profit: </b>\n Money left over from revenues after accounting for the cost of products and the cost of services. Gross profit serves as the source for paying all additional expenses and future savings</span>'],
+  ['j_31', '<span><b>Product gross profit: </b>\nMoney left over on product sales after subtracting out the direct expenses related to making the products</span>'],
+  ['j_32', '<span><b>Maintenance/services gross profit: </b>\nMoney left over from services and maintenance revenue after subtracting out the direct expenses related to providing the maintenance and services</span>']
+
+
   ];
 
 function hoverBox(arg1){
@@ -30,7 +41,7 @@ function hoverBox(arg1){
           for (var i = 0; i < arg1.length; i += 1) {
             $('#' + arg1[i][0] + '').tooltipster({
               content: $('<span>' + arg1[i][1] + '</span>'),
-              maxWidth: 300,
+              maxWidth: 350,
               interactive: true,
               position: 'top',
               theme: 'tooltipster-default',
@@ -46,7 +57,9 @@ hoverBox(metricsDefinitions);
 var derivedMetricsDefinitions = [
     ['ARR', '<span><b>Annual Recurring Revenue (ARR): </b> The predictable and recurring portion of revenue from subscriptions and maintenance</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex?MRR * 12" border="0" /> </center>'],
     ['ARPAnew', '<span><b>ARPA (new): </b> Average monthly recurring revenue per new paying account (customer)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac {MRR\\; from\\;  NEW\\; customers} {Number\\; of\\; new\\; paying\\; accounts}} " border="0" /> </center>'],
-    ['ARPAexisting', '<span><b>ARPA (existing): </b> Average monthly recurring revenue per existing paying account (customer)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac{MRR\\; from\\; existing\\; customers}{Number\\; of\\; existing\\; paying\\; accounts}} " border="0" /> </center>']
+    ['ARPAexisting', '<span><b>ARPA (existing): </b> Average monthly recurring revenue per existing paying account (customer)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac{MRR\\; from\\; existing\\; customers}{Number\\; of\\; existing\\; paying\\; accounts}} " border="0" /> </center>'],
+    ['ACV', '<span><b>ACV (annual contract value): </b> Annual contract value for subscription services per customer/account</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac{ARR}{Total\\; number\\; of\\; paying\\; accounts}} " border="0" /> </center>'],
+    ['CACblended', '<span><b>CAC (blended): </b>Average cost to acquire a customer (average across paid and organic customers)</span>' + '<br></br>' + '<center> <img src="http://latex.codecogs.com/svg.latex? {\\tiny%20\\frac{CAC-related\\; expense}{Total\\; number\\; of\\; new\\; paying\\; accounts}} " border="0" /> </center>']
     ];
 
 function derivedHoverBox(arg2){
@@ -69,24 +82,29 @@ derivedHoverBox(derivedMetricsDefinitions);
 
 // FUNCTION FOR HIGHLIGHTING
 
-var counterArr = [0,0,0,0,0]; // # of 0's depends on the # of derived metrics
+var counterArr = [0,0,0,0,0,0,0,0,0,0]; // # of 0's depends on the # of derived metrics
 
 var map={}; // connects each derived metric to it's derivatives
 map[0] = [source811];
-map[1] = [source611, source71];
-map[2] = [source613, source71];
+map[1] = [source611, source811];
+map[2] = [source613, source811];
+map[3] = [source71, source811];
+map[4] = [source611, source302];
 
 var sourceIDMap = []; // links ID and element name
-sourceIDMap[0] = ['j_14', source41];
-sourceIDMap[1] = ['j_19', source613];
-sourceIDMap[2] = ['j_23', source71];
+sourceIDMap[0] = ['j_21', source811];
+sourceIDMap[1] = ['j_17', source611];
+sourceIDMap[2] = ['j_19', source613];
+sourceIDMap[3] = ['j_23', source71];
+sourceIDMap[4] = ['j_39', source302];
+
 
 var colorMap={}; // links ID and original element color
-colorMap['j_14'] = '#ED6A5A';
+colorMap['j_21'] = '#5CA4A9';
+colorMap['j_17'] = '#ED6A5A';
 colorMap['j_19'] = '#ED6A5A';
 colorMap['j_23'] = '#ED6A5A';
-
-
+colorMap['j_39'] = '#ED6A5A';
 
 function highLight(val)
 {
@@ -143,16 +161,17 @@ function highLight(val)
   // for loop with IDs and links
 
 
-  var parentID =['j_56', 'j_11', 'j_19', 'j_24', 'j_27', 'j_30', 'j_36', 'j_37'];
+  var parentID =['j_58', 'j_11', 'j_21', 'j_26', 'j_29', 'j_32', 'j_38', 'j_39', 'j_17'];
   var parentMap = {};
-  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_57', 'j_58', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65'];
-  parentMap[1] = ['j_12', 'j_13', 'j_69', 'j_70'];
-  parentMap[2] = ['j_20','j_21', 'j_22', 'j_75', 'j_76', 'j_77'];
-  parentMap[3] = ['j_25', 'j_26', 'j_82', 'j_83'];
-  parentMap[4] = ['j_28', 'j_29', 'j_85', 'j_86'];
-  parentMap[5] = ['j_31', 'j_32', 'j_88', 'j_89'];
-  parentMap[6] = ['j_38', 'j_39', 'j_40', 'j_41', 'j_42', 'j_43', 'j_95', 'j_96', 'j_97', 'j_98', 'j_99', 'j_100'];
-  parentMap[7] = ['j_44', 'j_45', 'j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_101', 'j_102', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112'];
+  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65', 'j_66', 'j_67'];
+  parentMap[1] = ['j_12', 'j_13', 'j_71', 'j_72'];
+  parentMap[2] = ['j_22','j_23', 'j_24', 'j_77', 'j_78', 'j_79'];
+  parentMap[3] = ['j_27', 'j_28', 'j_84', 'j_85'];
+  parentMap[4] = ['j_30', 'j_31', 'j_87', 'j_88'];
+  parentMap[5] = ['j_33', 'j_34', 'j_90', 'j_91'];
+  parentMap[6] = ['j_40', 'j_41', 'j_42', 'j_43', 'j_44', 'j_45', 'j_97', 'j_98', 'j_99', 'j_100', 'j_101', 'j_102'];
+  parentMap[7] = ['j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_56', 'j_57', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112', 'j_113', 'j_114', 'j_115', 'j_116'];
+  parentMap[8] = ['j_18', 'j_19', 'j_103', 'j_104'];
 
 
  $(document).ready(function() {
@@ -170,15 +189,15 @@ $(document).ready(function() {
     $('#' + parentID[0]).css({'display': 'initial'});
     for (var j = 0; j < parentMap[0].length; j++) {
       if( $('#' + parentMap[0][j]).css('display')=='none' ) {
-        target1.transition('position/y', 260);
-        source31.transition('position/y', 340);
-        source32.transition('position/y', 340);
+        target1.transition('position/y', 260,  {delay: 50, duration: 400});
+        source31.transition('position/y', 340,  {delay: 50, duration: 400});
+        source32.transition('position/y', 340,  {delay: 50, duration: 400});
         $('#' + parentMap[0][j]).css({'display': 'initial'});
       } else {
         $('#' + parentMap[0][j]).css({'display': 'none'});
-        target1.transition('position/y', 100);
-        source31.transition('position/y', 220);
-        source32.transition('position/y', 220);
+        target1.transition('position/y', 100,  {delay: 50, duration: 300});
+        source31.transition('position/y', 220,  {delay: 50, duration: 300});
+        source32.transition('position/y', 220,  {delay: 50, duration: 300});
       }
 }
 });
@@ -192,8 +211,8 @@ $(document).ready(function() {
         if ( $('#j_1').css('display') == 'none') {
           $('#' + parentMap[1][j]).css({'display': 'initial'});
         } else {
-          source321.transition('position/y', 300);
-          source322.transition('position/y', 420);
+          source321.transition('position/y', 300, {delay: 50, duration: 300});
+          source322.transition('position/y', 420, {delay: 50, duration: 300});
           $('#' + parentMap[1][j]).css({'display': 'initial'});
         }
       } else {
@@ -284,26 +303,15 @@ $(document).ready(function() {
 });
 });
 
-
-// SHOW ON CLICK
-/*
-$(document).ready(function () {
-  var parentID =['j_56', 'j_11', 'j_19', 'j_24', 'j_27', 'j_30', 'j_36', 'j_37'];
-  var parentMap = {};
-  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_57', 'j_58', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65'];
-  parentMap[1] = ['j_12', 'j_13', 'j_69', 'j_70'];
-  parentMap[2] = ['j_20','j_21', 'j_22', 'j_75', 'j_76', 'j_77'];
-  parentMap[3] = ['j_25', 'j_26', 'j_82', 'j_83'];
-  parentMap[4] = ['j_28', 'j_29', 'j_85', 'j_86'];
-  parentMap[5] = ['j_31', 'j_32', 'j_88', 'j_89'];
-  parentMap[6] = ['j_38', 'j_39', 'j_40', 'j_41', 'j_42', 'j_43', 'j_95', 'j_96', 'j_97', 'j_98', 'j_99', 'j_100'];
-  parentMap[7] = ['j_44', 'j_45', 'j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_101', 'j_102', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112'];
-
-  for (var i = 0; i <parentID.length; i++) {
-    if( $('#' + parentID[i]).click() ) {
-      for (var j = 0; j < parentMap[i].length; j++) {
-        $('#' + parentMap[i][j]).css({'display': 'show'});
-    }
-  }
+$(document).ready(function() {
+  $('#' + parentID[8]).click( function()  {
+    $('#' + parentID[8]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[8].length; j++) {
+      if( $('#' + parentMap[8][j]).css('display')=='none' ) {
+        $('#' + parentMap[8][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[8][j]).css({'display': 'none'});
+      }
 }
-*/
+});
+});
