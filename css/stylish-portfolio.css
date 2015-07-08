@@ -63,7 +63,8 @@ body {
 /* Custom Horizontal Rule */
 
 hr.small {
-    max-width: 100px;
+    max-width: 500px;
+    margin-bottom: -30px;
 }
 
 /* Side Menu */

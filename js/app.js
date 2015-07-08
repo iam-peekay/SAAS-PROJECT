@@ -289,7 +289,7 @@ $(document).ready(function() {
 });
 });
 
-
+/*
 $(document).ready(function() {
   $('#' + parentID[7]).click( function()  {
     $('#' + parentID[7]).css({'display': 'initial'});
@@ -302,6 +302,48 @@ $(document).ready(function() {
 }
 });
 });
+
+*/
+
+$(document).ready(function() {
+  $('#' + parentID[7]).click( function()  {
+    $('#' + parentID[7]).css({'display': 'initial'});
+    for (var j = 0; j < parentMap[7].length; j++) {
+      if( $('#' + parentMap[7][j]).css('display')=='none' ) {
+        source302.transition('position/y', 2200,  {delay: 50, duration: 400});
+        source701.transition('position/y', 2300,  {delay: 50, duration: 400});
+        source702.transition('position/y', 2300,  {delay: 50, duration: 400});
+        source703.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source801.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source802.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source901.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source902.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source903.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source1100.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source1101.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source1200.transition('position/y', 2800,  {delay: 50, duration: 400});
+        source1201.transition('position/y', 2800,  {delay: 50, duration: 400});
+        $('#' + parentMap[7][j]).css({'display': 'initial'});
+      } else {
+        $('#' + parentMap[7][j]).css({'display': 'none'});
+        source302.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source701.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source702.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source703.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source801.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source802.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source901.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source902.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source903.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source1100.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source1101.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source1200.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source1201.transition('position/y', 1820,  {delay: 50, duration: 400});
+      }
+}
+});
+});
+
 
 $(document).ready(function() {
   $('#' + parentID[8]).click( function()  {

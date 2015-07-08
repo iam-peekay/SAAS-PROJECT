@@ -70,7 +70,7 @@ var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
 var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL*');
 var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
 var source322 = source32.clone().translate(180, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
-var source41 = source32.clone().translate(0, 240).attr('text/text', 'Opportunities');
+var source41 = source32.clone().translate(-100, 240).attr('text/text', 'Opportunities');
 
 source32.embed(source321).embed(source322);
 
@@ -109,8 +109,8 @@ source101.embed(source1011).embed(source1012);
 var source201 = source101.clone().translate(0, 180).attr('text/text', 'Sales &\n marketing');
 var source202 = source101.clone().translate(240, 200).attr('text/text', 'Research &\n development');
 var source203 = source101.clone().translate(-320, 200).attr('text/text', 'General &\n administrative');
-var source301 = source201.clone().translate(-220, 120).attr('text/text', 'Not\n CAC-related*');
-var source302 = source201.clone().translate(220, 120).attr('text/text', 'CAC-related*');
+var source301 = source201.clone().translate(-100, 120).attr('text/text', 'Not\n CAC-related*');
+var source302 = source201.clone().translate(100, 120).attr('text/text', 'CAC-related*');
 var source401 = source301.clone().translate(0, 100).attr('text/text', 'Customer service\n costs');
 var source501 = source401.clone().translate(90, 100).attr({text: {text: '# of \n tickets'}, rect: {fill: '#5CA4A9'}});;
 var source502 = source401.clone().translate(-90, 100).attr({text: {text: 'Cost per \n ticket'}, rect: {fill: '#5CA4A9'}});;
