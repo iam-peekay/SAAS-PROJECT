@@ -60,11 +60,21 @@ body {
     background-color: rgba(237,106,90,0.8);
 }
 
+#expand-button {
+  border-radius: 0;
+  color: #eee;
+  background-color: rgba(0,0,0,0.4);
+  font-size: 1em;
+
+}
 /* Custom Horizontal Rule */
 
 hr.small {
     max-width: 500px;
     margin-bottom: -30px;
+    color:  #384047;
+    background-color:  #384047;
+    height: .4px;
 }
 
 /* Side Menu */

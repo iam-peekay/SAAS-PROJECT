@@ -90,6 +90,7 @@ map[1] = [source611, source811];
 map[2] = [source613, source811];
 map[3] = [source71, source811];
 map[4] = [source611, source302];
+map[5] = [source611a, source302];
 
 var sourceIDMap = []; // links ID and element name
 sourceIDMap[0] = ['j_21', source811];
@@ -97,6 +98,7 @@ sourceIDMap[1] = ['j_17', source611];
 sourceIDMap[2] = ['j_19', source613];
 sourceIDMap[3] = ['j_23', source71];
 sourceIDMap[4] = ['j_39', source302];
+sourceIDMap[5] = ['j_18', source611a];
 
 
 var colorMap={}; // links ID and original element color
@@ -105,6 +107,7 @@ colorMap['j_17'] = '#ED6A5A';
 colorMap['j_19'] = '#ED6A5A';
 colorMap['j_23'] = '#ED6A5A';
 colorMap['j_39'] = '#ED6A5A';
+colorMap['j_18'] = '#5CA4A9';
 
 function highLight(val)
 {
@@ -180,6 +183,27 @@ function highLight(val)
           $('#' + parentMap[i][j]).css({'display': 'none'});
     }
   }
+  $('#menu-toggle').click( function() {
+    for (var i = 0; i < parentID.length; i++) {
+      for (var j=0; j < parentMap[i].length; j++) {
+        source302.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source701.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source702.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source703.transition('position/y', 2800,  {delay: 50, duration: 400});
+        source801.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source802.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source901.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source902.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source903.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source1100.transition('position/y', 2900,  {delay: 50, duration: 400});
+        source1101.transition('position/y', 2900,  {delay: 50, duration: 400});
+        source1200.transition('position/y', 3000,  {delay: 50, duration: 400});
+        source1201.transition('position/y', 3000,  {delay: 50, duration: 400});
+            $('#' + parentMap[i][j]).css({'display': 'initial'});
+      }
+    }
+
+  });
 
 });
 
@@ -310,35 +334,35 @@ $(document).ready(function() {
     $('#' + parentID[7]).css({'display': 'initial'});
     for (var j = 0; j < parentMap[7].length; j++) {
       if( $('#' + parentMap[7][j]).css('display')=='none' ) {
-        source302.transition('position/y', 2200,  {delay: 50, duration: 400});
-        source701.transition('position/y', 2300,  {delay: 50, duration: 400});
-        source702.transition('position/y', 2300,  {delay: 50, duration: 400});
-        source703.transition('position/y', 2600,  {delay: 50, duration: 400});
-        source801.transition('position/y', 2400,  {delay: 50, duration: 400});
-        source802.transition('position/y', 2400,  {delay: 50, duration: 400});
-        source901.transition('position/y', 2400,  {delay: 50, duration: 400});
-        source902.transition('position/y', 2500,  {delay: 50, duration: 400});
-        source903.transition('position/y', 2500,  {delay: 50, duration: 400});
-        source1100.transition('position/y', 2700,  {delay: 50, duration: 400});
-        source1101.transition('position/y', 2700,  {delay: 50, duration: 400});
-        source1200.transition('position/y', 2800,  {delay: 50, duration: 400});
-        source1201.transition('position/y', 2800,  {delay: 50, duration: 400});
+        source302.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source701.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source702.transition('position/y', 2500,  {delay: 50, duration: 400});
+        source703.transition('position/y', 2800,  {delay: 50, duration: 400});
+        source801.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source802.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source901.transition('position/y', 2600,  {delay: 50, duration: 400});
+        source902.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source903.transition('position/y', 2700,  {delay: 50, duration: 400});
+        source1100.transition('position/y', 2900,  {delay: 50, duration: 400});
+        source1101.transition('position/y', 2900,  {delay: 50, duration: 400});
+        source1200.transition('position/y', 3000,  {delay: 50, duration: 400});
+        source1201.transition('position/y', 3000,  {delay: 50, duration: 400});
         $('#' + parentMap[7][j]).css({'display': 'initial'});
       } else {
         $('#' + parentMap[7][j]).css({'display': 'none'});
-        source302.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source701.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source702.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source703.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source801.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source802.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source901.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source902.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source903.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source1100.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source1101.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source1200.transition('position/y', 1820,  {delay: 50, duration: 400});
-        source1201.transition('position/y', 1820,  {delay: 50, duration: 400});
+        source302.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source701.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source702.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source703.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source801.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source802.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source901.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source902.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source903.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source1100.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source1101.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source1200.transition('position/y', 1960,  {delay: 50, duration: 400});
+        source1201.transition('position/y', 1960,  {delay: 50, duration: 400});
       }
 }
 });

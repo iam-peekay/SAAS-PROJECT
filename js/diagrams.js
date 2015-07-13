@@ -7,7 +7,7 @@ var graph = new joint.dia.Graph;
 var paper1 = new joint.dia.Paper({
     el: $('#mydiagram'),
     width: 1100,
-    height: 3050,
+    height: 3350,
     model: graph,
     gridSize: 1
 
@@ -67,9 +67,9 @@ target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(so
 
 // MIDDLE OF FUNNEL BOXES
 var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
-var source32 = target1.clone().translate(90, 120).attr('text/text', 'SQL*');
-var source321 = source32.clone().translate(180, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
-var source322 = source32.clone().translate(180, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
+var source32 = target1.clone().translate(90, 260).attr('text/text', 'SQL*');
+var source321 = source32.clone().translate(190, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
+var source322 = source32.clone().translate(190, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
 var source41 = source32.clone().translate(-100, 240).attr('text/text', 'Opportunities');
 
 source32.embed(source321).embed(source322);
@@ -142,6 +142,7 @@ source703.embed(source1100).embed(source1101);
 source901.embed(source902).embed(source903);
 source702.embed(source901);
 source701.embed(source801).embed(source802);
+source611.embed(source611a).embed(source611b);
 
 
 // Links from top of funnel to unique visitors box

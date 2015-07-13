@@ -58,7 +58,7 @@
 <body>
 
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <a id="menu-toggle" href="diagram" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -66,22 +66,22 @@
                 <a href="#diagram"  onclick = $("#menu-close").click(); ><strong>Metrics Dictionary</strong></a>
             </li>
             <li>
-                <a href="#j_18" id="ARR" onclick = highLight('0'); >ARR</a>
+                <a href="#j_25" id="ARR" onclick = highLight('0'); >ARR</a>
             </li>
             <li>
-                <a href="#j_10" id="ARPAnew" onclick = highLight('1'); >ARPA (new)</a>
+                <a href="#j_15" id="ARPAnew" onclick = highLight('1'); >ARPA (new)</a>
             </li>
             <li>
-                <a href="#j_10" id= "ARPAexisting" onclick = highLight('2'); >ARPA (existing)</a>
+                <a href="#j_17" id= "ARPAexisting" onclick = highLight('2'); >ARPA (existing)</a>
             </li>
             <li>
-                <a href="#diagram" id="ACV" onclick = highLight('3'); >ACV</a>
+                <a href="#j_17" id="ACV" onclick = highLight('3'); >ACV</a>
             </li>
             <li>
-                <a href="#diagram" id="CACblended" onclick = highLight('4'); >CAC (blended)</a>
+                <a href="#j_15" id="CACblended" onclick = highLight('4'); >CAC (blended)</a>
             </li>
             <li>
-                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 6</a>
+                <a href="#j_15" id="CACpaid" onclick = highLight('5'); >CAC (paid)</a>
             </li>
             <li>
                 <a href="#diagram" onclick = $("#menu-close").click(); >Metric 7</a>
@@ -133,13 +133,15 @@
                           <dd>... on the right side contains a dictionary of SaaS metrics</dd>
 
                       </dl>
-                      <hr class="small"> </hr>
+
                     <div>
                     <div id="mydiagram">
-
+                      <button type='button' id="expand-button" class="btn btn-lg">Click to expand all boxes</button>
+                      <hr class="small"> </hr>
                     <!-- End of blank space for diagram -->
 
                 </div>
+
                 <!-- /.col-lg-10 -->
             </div>
             <!-- /.row -->
