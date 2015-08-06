@@ -204,6 +204,16 @@ header {
   text-align: center;
 }
 
+
+/* Sections */
+
+.section {
+    padding: 50px 0;
+}
+
+
+
+
 /* Call to Action */
 
 .call-to-action {
