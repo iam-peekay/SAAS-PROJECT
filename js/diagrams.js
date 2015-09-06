@@ -57,7 +57,7 @@ var source21 = source11.clone().translate(-60, 80).attr('text/text', 'Word of mo
 var source22 = source11.clone().translate(-100, 160).attr('text/text', 'Referrals');
 var source23 = source11.clone().translate(140, -20).attr('text/text', 'Content\n marketing');
 var source24 = source11.clone().translate(-120, 240).attr('text/text', 'SEO');
-var source25 = source11.clone().translate(460, 220).attr('text/text', 'Field sales');
+var source25 = source11.clone().translate(460, 220).attr('text/text', 'Field sales \n (Direct channel)');
 
 // UNIQUE VISITORS BOX
 var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Marketing & \n lead gen*'}, rect: {fill: '#ED6A5A'}});
@@ -69,7 +69,7 @@ target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(so
 var source31 = target1.clone().translate(-90, 120).attr('text/text', 'MQL');
 var source32 = target1.clone().translate(90, 260).attr('text/text', 'SQL*');
 var source321 = source32.clone().translate(190, -45).attr({text: {text: 'Indirect \n channel'}, rect: {fill:  '#5CA4A9'}});
-var source322 = source32.clone().translate(190, 45).attr({text: {text: 'Outbound \n prospecting'}, rect: {fill:  '#5CA4A9'}});
+var source322 = source32.clone().translate(190, 45).attr({text: {text: 'Inside \n sales'}, rect: {fill:  '#5CA4A9'}});
 var source41 = source32.clone().translate(-100, 240).attr('text/text', 'Opportunities');
 
 source32.embed(source321).embed(source322);
