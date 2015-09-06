@@ -57,10 +57,10 @@ var source21 = source11.clone().translate(-60, 80).attr('text/text', 'Word of mo
 var source22 = source11.clone().translate(-100, 160).attr('text/text', 'Referrals');
 var source23 = source11.clone().translate(140, -20).attr('text/text', 'Content\n marketing');
 var source24 = source11.clone().translate(-120, 240).attr('text/text', 'SEO');
-var source25 = source11.clone().translate(460, 220).attr('text/text', 'Other paid\n sources');
+var source25 = source11.clone().translate(460, 220).attr('text/text', 'Field sales');
 
 // UNIQUE VISITORS BOX
-var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Unique visitors*'}, rect: {fill: '#ED6A5A'}});
+var target1 = source11.clone().translate(180, 80).attr({text: {text: 'Marketing & \n lead gen*'}, rect: {fill: '#ED6A5A'}});
 // target1 was y: 280 originally
 
 target1.embed(source11).embed(source12).embed(source13).embed(source14).embed(source21).embed(source22).embed(source23).embed(source24).embed(source25);
@@ -292,26 +292,7 @@ var link24 = new joint.dia.Link({
 
 var link25 = new joint.dia.Link({
     source: { id: source25.id },
-    target: { id: target1.id },
-    // router: { name: 'manhattan'},
-    connector: {name: 'smooth'},
-    attrs: {
-      '.connection': {
-        stroke: '#384047',
-        'stroke-width': 3
-      },
-      '.marker-target': {
-        stroke: '#F26D6D',
-        fill: '#F26D6D',
-        d: 'M 10 0 L 0 5 L 10 10 z'
-      }
-    }
-});
-
-
-var link25 = new joint.dia.Link({
-    source: { id: source25.id },
-    target: { id: target1.id },
+    target: { id: source32.id },
     // router: { name: 'manhattan'},
     connector: {name: 'smooth'},
     attrs: {

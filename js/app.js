@@ -166,8 +166,8 @@ function highLight(val)
 
   var parentID =['j_58', 'j_11', 'j_21', 'j_26', 'j_29', 'j_32', 'j_38', 'j_39', 'j_17'];
   var parentMap = {};
-  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_9', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65', 'j_66', 'j_67'];
-  parentMap[1] = ['j_12', 'j_13', 'j_71', 'j_72'];
+  parentMap[0] = ['j_1', 'j_2', 'j_3', 'j_4', 'j_5', 'j_6', 'j_7', 'j_8', 'j_59', 'j_60', 'j_61', 'j_62', 'j_63', 'j_64', 'j_65', 'j_66'];
+  parentMap[1] = ['j_9', 'j_12', 'j_13', 'j_67', 'j_71', 'j_72'];
   parentMap[2] = ['j_22','j_23', 'j_24', 'j_77', 'j_78', 'j_79'];
   parentMap[3] = ['j_27', 'j_28', 'j_84', 'j_85'];
   parentMap[4] = ['j_30', 'j_31', 'j_87', 'j_88'];
@@ -237,6 +237,7 @@ $(document).ready(function() {
         } else {
           source321.transition('position/y', 300, {delay: 50, duration: 300});
           source322.transition('position/y', 420, {delay: 50, duration: 300});
+          source25.transition('position/y', 420, {delay: 50, duration: 300});
           $('#' + parentMap[1][j]).css({'display': 'initial'});
         }
       } else {
