@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SaaS Metrics Digram</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Fontawesome CSS -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Tooltipster CSS -->
+    <link href="tooltipster-master/css/tooltipster.css" rel="stylesheet" type="text/css"/>
+
+    <!-- PK custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet"/>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- JointJS JavaScript -->
+    <script src="js/joint.js"></script>
+
+    <!-- Tooltipster JavaScript -->
+    <script type="text/javascript" src="tooltipster-master/js/jquery.tooltipster.min.js"></script>
+
+
+    <!-- LaTeX JavaScript -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+    <script type="text/javascript">LatexIT.add('p',true);</script>
+
+    <!-- JointJS CSS -->
+    <link href="css/joint.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,600italic,700italic,400,300,600,700,800|Varela+Round' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="diagram" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#diagram"  onclick = $("#menu-close").click(); ><strong>Metrics Dictionary</strong></a>
+            </li>
+            <li>
+                <a href="#j_25" id="ARR" onclick = highLight('0'); >ARR</a>
+            </li>
+            <li>
+                <a href="#j_15" id="ARPAnew" onclick = highLight('1'); >ARPA (new)</a>
+            </li>
+            <li>
+                <a href="#j_17" id= "ARPAexisting" onclick = highLight('2'); >ARPA (existing)</a>
+            </li>
+            <li>
+                <a href="#j_17" id="ACV" onclick = highLight('3'); >ACV</a>
+            </li>
+            <li>
+                <a href="#j_15" id="CACblended" onclick = highLight('4'); >CAC (blended)</a>
+            </li>
+            <li>
+                <a href="#j_15" id="CACpaid" onclick = highLight('5'); >CAC (paid)</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 7</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 8</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 9</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 10</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 11</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 12</a>
+            </li>
+            <li>
+                <a href="#diagram" onclick = $("#menu-close").click(); >Metric 13</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1 #id="header-font">SAAS METRICS FLOW DIAGRAM</h1>
+            <h3>Understand how SaaS metrics work</h3>
+            <br>
+            <a href="#diagram" class="btn btn-dark btn-lg">Scroll to begin playing!</a>
+        </div>
+    </header>
+
+    <!-- Diagram -->
+    <section id="diagram" class="diagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2><strong>SaaS Flow Chart</strong></h2>
+                    <div id="diagram-description">
+                      <dl>
+                        <dt>Hover</dt>
+                          <dd>... on each box to learn more</dd>
+                        <dt>Click</dt>
+                          <dd>... on boxes with a '*' to expand subelements</dd>
+                        <dt>Navigation bar</dt>
+                          <dd>... on the right side contains a dictionary of SaaS metrics</dd>
+
+                      </dl>
+
+                    <div>
+                    <div id="mydiagram">
+                      <hr class="small"> </hr>
+                    <!-- End of blank space for diagram -->
+
+                </div>
+
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Have suggestions for improvements? </h3>
+                    <p>Would love to hear them!</p>
+                    <a href="mailto:iam.preethi.k@gmailcom" class="btn btn-lg btn-dark mail">Email Me!</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Preethi Kasireddy</strong></h4>
+                    <p>Nerd weirdo</p>
+                    <ul class="contact-info">
+                        <li class="phone"> <img id="contact-pic" src='img/phone.png'/> <a href="tel:201-895-9299" id="contact-position"> (201) 895-9299 </a></li>
+                        <li class="mail">  <img id="contact-pic" src='img/mail.png'/> <a href="mailto:iam.preethi.k@gmail.com" id="contact-position"> iam.preethi.k@gmail.com</a></li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                          <a href="http://twitter.com/iam_preethi"> <img src="../treehouse/workspace1/img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"> </a>
+                        </li>
+                        <li>
+                            <a href="http://facebook.com/preethikasireddy"><img src="../treehouse/workspace1/img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+                        </li>
+                    </ul>
+
+                    <p class="text-muted">Copyright &copy; Preethi Kasireddy 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+    <!-- PK custom JavaScript -->
+    <script src="js/diagrams.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
