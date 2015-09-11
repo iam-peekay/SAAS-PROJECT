@@ -1,5 +1,4 @@
 // INPUT & FUNCTION FOR MAIN METRICS HOVERBOXES
-// This is a test comment
 var metricsDefinitions = [
   ['j_2', '<span><b>Social media marketing:</b>\n Paid marketing through social media sites (e.g. Facebook, Twitter, Pinterest, etc.)</span>' ],
   ['j_3', '<span><b>Search engine marketing (SEM):</b>\n A form of <i>paid</i> online marketing that promotes websites by increasing their visibility in search engine results pages (SERPs) through optimization and advertising</span>'],
@@ -173,7 +172,7 @@ function highLight(val)
   parentMap[3] = ['j_27', 'j_28', 'j_84', 'j_85'];
   parentMap[4] = ['j_30', 'j_31', 'j_87', 'j_88'];
   parentMap[5] = ['j_33', 'j_34', 'j_90', 'j_91'];
-  parentMap[6] = ['j_40', 'j_41', 'j_42', 'j_43', 'j_44', 'j_45', 'j_97', 'j_98', 'j_99', 'j_100', 'j_101', 'j_102'];
+  parentMap[6] = ['j_40', 'j_41', 'j_42', 'j_97', 'j_98', 'j_99'];
   parentMap[7] = ['j_46', 'j_47', 'j_48', 'j_49', 'j_50', 'j_51', 'j_52', 'j_53', 'j_54', 'j_55', 'j_56', 'j_57', 'j_103', 'j_104', 'j_105', 'j_106', 'j_107', 'j_108', 'j_109', 'j_110', 'j_111', 'j_112', 'j_113', 'j_114', 'j_115', 'j_116'];
   parentMap[8] = ['j_18', 'j_19', 'j_103', 'j_104'];
 
@@ -301,6 +300,15 @@ $(document).ready(function() {
 });
 });
 
+$(document).ready(function() {
+  
+        $('#j_43').css({'display': 'none'});
+        $('#j_44').css({'display': 'none'});
+        $('#j_45').css({'display': 'none'});
+        $('#j_100').css({'display': 'none'});
+        $('#j_101').css({'display': 'none'});
+        $('#j_102').css({'display': 'none'});
+});
 
 $(document).ready(function() {
   $('#' + parentID[6]).click( function()  {
@@ -308,6 +316,12 @@ $(document).ready(function() {
     for (var j = 0; j < parentMap[6].length; j++) {
       if( $('#' + parentMap[6][j]).css('display')=='none' ) {
         $('#' + parentMap[6][j]).css({'display': 'initial'});
+        $('#j_43').css({'display': 'none'});
+        $('#j_44').css({'display': 'none'});
+        $('#j_45').css({'display': 'none'});
+        $('#j_100').css({'display': 'none'});
+        $('#j_101').css({'display': 'none'});
+        $('#j_102').css({'display': 'none'});
       } else {
         $('#' + parentMap[6][j]).css({'display': 'none'});
       }
@@ -315,28 +329,13 @@ $(document).ready(function() {
 });
 });
 
-/*
-$(document).ready(function() {
-  $('#' + parentID[7]).click( function()  {
-    $('#' + parentID[7]).css({'display': 'initial'});
-    for (var j = 0; j < parentMap[7].length; j++) {
-      if( $('#' + parentMap[7][j]).css('display')=='none' ) {
-        $('#' + parentMap[7][j]).css({'display': 'initial'});
-      } else {
-        $('#' + parentMap[7][j]).css({'display': 'none'});
-      }
-}
-});
-});
-
-*/
 
 $(document).ready(function() {
   $('#' + parentID[7]).click( function()  {
     $('#' + parentID[7]).css({'display': 'initial'});
     for (var j = 0; j < parentMap[7].length; j++) {
       if( $('#' + parentMap[7][j]).css('display')=='none' ) {
-        source302.transition('position/y', 2400,  {delay: 50, duration: 400});
+        source302.transition('position/y', 2300,  {delay: 50, duration: 400});
         source701.transition('position/y', 2500,  {delay: 50, duration: 400});
         source702.transition('position/y', 2500,  {delay: 50, duration: 400});
         source703.transition('position/y', 2800,  {delay: 50, duration: 400});

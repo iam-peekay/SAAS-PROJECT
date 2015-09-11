@@ -7,7 +7,7 @@ var graph = new joint.dia.Graph;
 var paper1 = new joint.dia.Paper({
     el: $('#mydiagram'),
     width: 1100,
-    height: 3350,
+    height: 3300,
     model: graph,
     gridSize: 1
 
@@ -120,8 +120,8 @@ var source603 = source502.clone().translate(140, 100).attr({text: {text: 'Salary
 var source701 = source302.clone().translate(180, 100).attr('text/text', 'Cost to\n serve');
 var source702 = source302.clone().translate(-180, 100).attr('text/text', 'Sales expense');
 var source703 = source302.clone().translate(0, 400).attr('text/text', 'Marketing\n expense');
-var source801 = source701.clone().translate(90, 100).attr({text: {text: 'Infrastructure'}, rect: {fill: '#5CA4A9'}});
-var source802 = source701.clone().translate(-90, 100).attr({text: {text: 'On-boarding \n costs'}, rect: {fill: '#5CA4A9'}});
+var source801 = source701.clone().translate(90, 100).attr({text: {text: 'Hosting & \n Infrastructure'}, rect: {fill: '#5CA4A9'}});
+var source802 = source701.clone().translate(-90, 100).attr({text: {text: 'Customer \n on-boarding'}, rect: {fill: '#5CA4A9'}});
 var source901 = source702.clone().translate(0, 100).attr({text: {text: 'Sales personnel\n costs'}, rect: {fill: '#5CA4A9'}});
 var source902 = source901.clone().translate(90, 100).attr({text: {text: 'Inbound sales'}, rect: {fill: '#9BC1BC'}});
 var source903 = source901.clone().translate(-90, 100).attr({text: {text: 'Outbound sales'}, rect: {fill: '#9BC1BC'}});
